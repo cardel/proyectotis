@@ -19,4 +19,5 @@ def inicio(request):
         "form": form
     }
 
-    return render(request, "inicio.html", context)
+    return render(request, "templateProyecto/index.html", context)
+
