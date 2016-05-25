@@ -76,17 +76,28 @@ WSGI_APPLICATION = 'proyectotis.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'agrofruta',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
+#DATABASES = {
+    #'default': {
+        #'ENGINE': 'django.db.backends.postgresql',
+        #'NAME': 'agrofruta',
+        #'USER': 'postgres',
+        #'PASSWORD': 'postgres',
+        #'HOST': '127.0.0.1',
+        #'PORT': '5432',
+    #}
+#}
 
+#Configuración Web Servidor analogo
+DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'tendencias',                  
+            'USER': 'tendencias',
+            'PASSWORD': 'tendencias',
+            'HOST': '172.31.5.162',   #Servidor de base de datos Amazon
+            'PORT': '5432',                    
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -124,4 +135,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+#Staticos
 STATIC_URL = '/static/'
+STATICFILES_DIRS=(BASE_DIR,'static',)
+
+#Imagenes
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR.child('media')
