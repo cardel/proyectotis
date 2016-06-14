@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 #Aplicaciones utilizadas en el esquema publico de la herramienta / usadas por todos
 SHARED_APPS = (
     #APP DE LA HERRAMIENTA DJANGO-TENANTS
-    'django_tenants',
+    #'django_tenants',
     #APP QUE CONTIENE EL MANEJO DE TENANTS
     #'tenant',
 
