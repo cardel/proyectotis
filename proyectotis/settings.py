@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 #Aplicaciones utilizadas en el esquema publico de la herramienta / usadas por todos
 SHARED_APPS = (
     #APP DE LA HERRAMIENTA DJANGO-TENANTS
-    'django_tenants',
+    'tenant_schemas',
     #APP QUE CONTIENE EL MANEJO DE TENANTS
     'productortenant',
 
@@ -63,7 +63,8 @@ INSTALLED_APPS = list(set(SHARED_APPS + TENANT_APPS))
 
 MIDDLEWARE_CLASSES = [
     #Agregar esta clase para el uso de tenants
-    'django_tenants.middleware.TenantMiddleware',
+    'tenant_schemas.middleware.TenantMiddleware',
+    'tenant_schemas.middleware.SuspiciousTenantMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -119,7 +120,7 @@ WSGI_APPLICATION = 'proyectotis.wsgi.application'
 DATABASES = {
         'default': {
             #'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'ENGINE': 'django_tenants.postgresql_backend',
+            'ENGINE': 'tenant_schemas.postgresql_backend',
             'NAME': 'tendencias',                  
             'USER': 'tendencias',
             'PASSWORD': 'tendencias',
@@ -130,7 +131,7 @@ DATABASES = {
 
 #Esto es necesario para que se puedan trabajar tenants
 DATABASE_ROUTERS = (
-    'django_tenants.routers.TenantSyncRouter',
+    'tenant_schemas.routers.TenantSyncRouter',
 )
 
 
