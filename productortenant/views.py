@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from .models import Domain, Productor
 from django.views.generic import FormView
+from .forms import GenerateProductors
 
 
 # Create your views here.
 class ProductorForm(FormView):
-
+    form_class = GenerateProductors
+    success_url = "/"
     template_name = "templateProyecto/index.html"
     titulo = "Registro Productor"
     model = Productor
