@@ -4,6 +4,6 @@ from django.contrib import admin
 
 #Urls publicas
 urlpatterns = [
-    url(r'^$', CrearProductor.as_view()),
+    url(r'^productor/', CrearProductor.as_view()),
     url(r'^admin/', admin.site.urls),
 ]
