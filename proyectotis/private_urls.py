@@ -16,10 +16,10 @@ Including another URLconf
 from django.conf.urls import include, url
 
 
-import gestionfruta
+from gestionfruta import views
 urlpatterns = [
 
-   url(r'^$', gestionfruta.views.inicio, name='inicio'),
+   url(r'^$', views.inicio(), name='inicio'),
 
 ]
 
