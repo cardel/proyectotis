@@ -9,7 +9,7 @@ class CrearProductor(CreateView):
     template_name = "index.html"
     titulo = "Registro Productor"
     model = Productor
-    fields = ["tipo_documento", "dominio", "nombre", "fecha_nacimiento", "telefono", "correo"]
+    fields = ["tipo_documento", "url", "nombre", "fecha_nacimiento", "telefono", "correo"]
 
     def get_context_data(self, **kwargs):
         context = super(CrearProductor, self).get_context_data(**kwargs)
@@ -17,7 +17,7 @@ class CrearProductor(CreateView):
 
     def form_valid(self,form):
         tenant_registrado = form.instance
-        tenant_registrado.schema_name = tenant_registrado.domain_url
+        tenant_registrado.schema_name = tenant_registrado.nombreurl
         self.object = form.save()
         dominio_tenant = Domain(domain=self.object.nombre_tenant+'.localhost',
                                 is_primary=True,
