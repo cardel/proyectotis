@@ -6,7 +6,7 @@ from .models import Productor
 class ProductorForm(forms.ModelForm):
     class RegistrarTenant:
         model = Productor
-        fields = ["nombre comercial", "tipo_documento", "nombre", "fecha_nacimiento", "telefono", "correo"]
+        fields = ["tipo_documento", "dominio", "nombre", "fecha_nacimiento", "telefono", "correo"]
 
     def clean_email(self):
         nombre = self.cleaned_data.get("nombre")
