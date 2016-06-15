@@ -4,6 +4,6 @@ from productortenant.views import ProductorForm
 #Urls publicas
 urlpatterns = [
    #url(r'^$', ProductorForm.as_view()),
-   url(r'^$', 'gestionfruta.views.inicio', name='inicio'),
+    url(r'^gestionFruta$', 'gestionfruta.views.inicio', name='inicio'),
 
 ]
