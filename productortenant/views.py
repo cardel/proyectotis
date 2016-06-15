@@ -9,7 +9,7 @@ from django.conf import settings
 
 # Create your views here.
 class HomeView(TemplateView):
-    template_name = "index_public.html"
+    template_name = "index.html"
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
@@ -32,4 +32,3 @@ class HomeView(TemplateView):
 
         context['tenants_list'] = Productor.objects.all()
         return context
-
