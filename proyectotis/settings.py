@@ -121,8 +121,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 
-ROOT_URLCONF = 'proyectotis.private_urls'
-PUBLIC_SCHEMA_URLCONF = 'proyectotis.public_urls'
+ROOT_URLCONF = 'private_urls'
+PUBLIC_SCHEMA_URLCONF = 'public_urls'
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
