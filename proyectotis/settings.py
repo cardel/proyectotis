@@ -86,16 +86,18 @@ TEMPLATES = [
         'DIRS': [os.path.join(BASE_DIR, 'templates/templateProyecto')],
         'APP_DIRS': True,
         'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
+            'debug': DEBUG,
+
         },
     },
 ]
+TEMPLATE_CONTEXT_PROCESSORS = [
+    'django.template.context_processors.debug',
+    'django.template.context_processors.request',
+    'django.contrib.auth.context_processors.auth',
+    'django.contrib.messages.context_processors.messages',
 
+]
 
 WSGI_APPLICATION = 'proyectotis.wsgi.application'
 
