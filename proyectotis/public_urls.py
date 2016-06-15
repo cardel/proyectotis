@@ -6,5 +6,4 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^crea$', ProductorForm.as_view()),
     url(r'^admin/', admin.site.urls),
-    url(r'^$', HomeView.as_view()),
 ]
