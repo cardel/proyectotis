@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="70710f70-a71b-48aa-bdf1-a5a78c97cbfe" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proyectotis/settings.py" afterPath="$PROJECT_DIR$/proyectotis/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productortenant/views.py" afterPath="$PROJECT_DIR$/productortenant/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proyectotis/public_urls.py" afterPath="$PROJECT_DIR$/proyectotis/public_urls.py" />
     </list>
     <ignored path="proyectotis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,21 +25,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/proyectotis/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7777778">
+            <state vertical-scroll-proportion="-15.5">
               <caret line="98" column="1" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/productortenant/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="20" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.17406143">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -50,10 +51,8 @@
         <entry file="file://$PROJECT_DIR$/proyectotis/public_urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+              <caret line="1" column="57" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,10 +118,10 @@
         <option value="$PROJECT_DIR$/gestionfruta/views.py" />
         <option value="$PROJECT_DIR$/proyectotis/private_urls.py" />
         <option value="$PROJECT_DIR$/productortenant/middleware.py" />
-        <option value="$PROJECT_DIR$/productortenant/views.py" />
         <option value="$PROJECT_DIR$/templates/templateProyecto/index.html" />
-        <option value="$PROJECT_DIR$/proyectotis/public_urls.py" />
         <option value="$PROJECT_DIR$/proyectotis/settings.py" />
+        <option value="$PROJECT_DIR$/proyectotis/public_urls.py" />
+        <option value="$PROJECT_DIR$/productortenant/views.py" />
       </list>
     </option>
   </component>
@@ -675,14 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gestionfruta/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5802048">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/productortenant/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -717,31 +708,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/proyectotis/public_urls.py">
+    <entry file="file://$PROJECT_DIR$/gestionfruta/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productortenant/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="20" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.5802048">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/proyectotis/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7777778">
+        <state vertical-scroll-proportion="-15.5">
           <caret line="98" column="1" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectotis/public_urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="57" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productortenant/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17406143">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
