@@ -59,6 +59,8 @@ INSTALLED_APPS = list(set(SHARED_APPS + TENANT_APPS))
 
 
 MIDDLEWARE_CLASSES = [
+    #Agregar esta clase para el uso de tenants
+    'tenant_schemas.middleware.TenantMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -67,8 +69,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #Agregar esta clase para el uso de tenants
-    'tenant_schemas.middleware.TenantMiddleware',
+
 ]
 
 ROOT_URLCONF = 'proyectotis.urls'
@@ -110,7 +111,8 @@ WSGI_APPLICATION = 'proyectotis.wsgi.application'
 #Configuración Web Servidor analogo
 DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            #'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'ENGINE': 'tenant_schemas.postgresql_backend',
             'NAME': 'tendencias',                  
             'USER': 'tendencias',
             'PASSWORD': 'tendencias',
@@ -122,6 +124,11 @@ DATABASES = {
 #Esto es necesario para que se puedan trabajar tenants
 DATABASE_ROUTERS = (
     'django_tenants.routers.TenantSyncRouter',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.request',
+    #...
 )
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
