@@ -8,6 +8,7 @@ from django_tenants.models import TenantMixin, DomainMixin
 
 #Modelo para crear tenants
 class Productor(TenantMixin):
+    nombre_comercial = models.CharField(max_length=100)
     document_choices = (
         ('CC', 'Cédula'),
         ('NIT', 'NIT'),
@@ -18,7 +19,6 @@ class Productor(TenantMixin):
         choices=document_choices,
         default='CC'
     )
-    nombre_comercial = models.CharField(max_length=100)
     nombre = models.CharField(max_length=100)
     fecha_nacimiento =  models.DateField()
     telefono = models.CharField(max_length=100)
