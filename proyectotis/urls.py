@@ -21,7 +21,7 @@ from productortenant.views import ProductorForm
 
 urlpatterns = [
    url(r'^admin/', admin.site.urls),
-    url(r'^$', ProductorForm.as_view(), name='registrarProductor'),
+   url(r'^$', ProductorForm, name='registrarProductor'),
 
 ]
 
