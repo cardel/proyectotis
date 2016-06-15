@@ -7,7 +7,7 @@ from .forms import GenerateProductors
 # Create your views here.
 class ProductorForm(FormView):
     form_class = GenerateProductors
-    success_url = "/"
+    success_url = "/jaja"
     template_name = "index.html"
     titulo = "Registro Productor"
     model = Productor
