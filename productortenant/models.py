@@ -18,6 +18,7 @@ class Productor(TenantMixin):
         choices=document_choices,
         default='CC'
     )
+    nombre_comercial = models.CharField(max_length=100)
     nombre = models.CharField(max_length=100)
     fecha_nacimiento =  models.DateField()
     telefono = models.CharField(max_length=100)
