@@ -19,7 +19,7 @@ class Productor(TenantMixin):
         choices=document_choices,
         default='CC'
     )
-    nombreurl = models.CharField(max_length=100)
+    nombreurl = models.CharField(max_length=100, default='miFinca')
     nombre = models.CharField(max_length=100)
     fecha_nacimiento =  models.DateField()
     telefono = models.CharField(max_length=100)
