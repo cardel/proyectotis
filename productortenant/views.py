@@ -5,15 +5,9 @@ from django.views.generic import CreateView
 
 # Create your views here.
 class CrearProductor(CreateView):
-    success_url = "/"
-    template_name = "index.html"
-    titulo = "Registro Productor"
     model = Productor
+    success_url = "/gg"
     fields = ["tipo_documento", "url", "nombre", "fecha_nacimiento", "telefono", "correo"]
-
-    def get_context_data(self, **kwargs):
-        context = super(CrearProductor, self).get_context_data(**kwargs)
-        return context
 
     def form_valid(self,form):
         tenant_registrado = form.instance
