@@ -17,7 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 
-import gestionfruta
+import productortenant
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
