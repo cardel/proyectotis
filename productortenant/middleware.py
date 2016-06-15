@@ -6,7 +6,7 @@ from tenant_schemas.utils import get_tenant_model, remove_www_and_dev, get_publi
 from django.db import utils
 
 
-class TenantTutorialMiddleware(object):
+class ProductorMiddleware(object):
     def process_request(self, request):
         connection.set_schema_to_public()
         hostname_without_port = remove_www_and_dev(request.get_host().split(':')[0])

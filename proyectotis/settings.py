@@ -63,7 +63,7 @@ INSTALLED_APPS = list(set(SHARED_APPS + TENANT_APPS))
 
 MIDDLEWARE_CLASSES = [
     #Agregar esta clase para el uso de tenants
-    'tenant_schemas.middleware.TenantMiddleware',
+    'proyectotis.middleware.ProductorMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
