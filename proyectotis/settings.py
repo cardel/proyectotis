@@ -24,6 +24,7 @@ SECRET_KEY = 'qe2i-@deobewo9hi%v5af#*re$1s@2ze=t-98-_q3r)#x9pf=m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = []
 
@@ -76,25 +77,7 @@ MIDDLEWARE_CLASSES = [
 
 ]
 
-ROOT_URLCONF = 'proyectotis.private_urls'
-PUBLIC_SCHEMA_URLCONF = 'proyectotis.public_urls'
-PUBLIC_SCHEMA_NAME = 'public'
 
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates/templateProyecto')],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'debug': DEBUG,
-
-
-        },
-    },
-]
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.core.context_processors.request',
-)
 
 WSGI_APPLICATION = 'proyectotis.wsgi.application'
 
@@ -130,12 +113,24 @@ DATABASES = {
 DATABASE_ROUTERS = (
     'tenant_schemas.routers.TenantSyncRouter',
 )
-
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
-    #...
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.contrib.messages.context_processors.messages',
 )
+
+
+ROOT_URLCONF = 'proyectotis.private_urls'
+PUBLIC_SCHEMA_URLCONF = 'proyectotis.public_urls'
+
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
@@ -171,6 +166,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
+TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), '..', 'templates/templateProyecto').replace('\\', '/'),)
 
 #Staticos
 STATIC_URL = '/static/'

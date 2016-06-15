@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="70710f70-a71b-48aa-bdf1-a5a78c97cbfe" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productortenant/models.py" afterPath="$PROJECT_DIR$/productortenant/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productortenant/views.py" afterPath="$PROJECT_DIR$/productortenant/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/proyectotis/settings.py" afterPath="$PROJECT_DIR$/proyectotis/settings.py" />
     </list>
     <ignored path="proyectotis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/proyectotis/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.142857">
-              <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.4982078">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -77,10 +76,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/productortenant/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8122867">
+            <state vertical-scroll-proportion="0.0">
               <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -109,9 +108,9 @@
         <option value="$PROJECT_DIR$/productortenant/middleware.py" />
         <option value="$PROJECT_DIR$/templates/templateProyecto/index.html" />
         <option value="$PROJECT_DIR$/proyectotis/public_urls.py" />
-        <option value="$PROJECT_DIR$/proyectotis/settings.py" />
         <option value="$PROJECT_DIR$/productortenant/views.py" />
         <option value="$PROJECT_DIR$/productortenant/models.py" />
+        <option value="$PROJECT_DIR$/proyectotis/settings.py" />
       </list>
     </option>
   </component>
@@ -704,14 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/proyectotis/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.142857">
-          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/productortenant/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.178572">
@@ -724,11 +715,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/productortenant/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8122867">
+        <state vertical-scroll-proportion="0.0">
           <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/proyectotis/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.4982078">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
