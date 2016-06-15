@@ -30,15 +30,33 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
+
+#Aplicaciones utilizadas en el esquema publico de la herramienta / usadas por todos
+SHARED_APPS = (
+    #APP DE LA HERRAMIENTA DJANGO-TENANTS
+    'django_tenants',
+    #APP QUE CONTIENE EL MANEJO DE TENANTS
+    #'tenant',
+
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.admin',
+    'bootstrap3',
+)
+#aplicaciones privadas
+TENANT_APPS = (
+    'django.contrib.contenttypes',
+    'django.contrib.auth',
+    'django.contrib.messages',
     'gestionfruta',
-]
+)
+
+INSTALLED_APPS = list(set(SHARED_APPS + TENANT_APPS))
+
+
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -49,6 +67,8 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #Agregar esta clase para el uso de tenants
+    'tenant_schemas.middleware.TenantMiddleware',
 ]
 
 ROOT_URLCONF = 'proyectotis.urls'
@@ -99,6 +119,10 @@ DATABASES = {
         }
     }
 
+#Esto es necesario para que se puedan trabajar tenants
+DATABASE_ROUTERS = (
+    'django_tenants.routers.TenantSyncRouter',
+)
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
