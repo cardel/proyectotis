@@ -13,7 +13,6 @@ def inicio(request):
     if form.is_valid():
         form.save()
 
-
     context = {
         "titulo": titulo,
         "form": form

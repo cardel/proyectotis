@@ -36,7 +36,7 @@ SHARED_APPS = (
     #APP DE LA HERRAMIENTA DJANGO-TENANTS
     'tenant_schemas',
     #APP QUE CONTIENE EL MANEJO DE TENANTS
-    'proyectotis',
+    'productortenant',
 
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,6 +53,9 @@ TENANT_APPS = (
     'django.contrib.messages',
     'gestionfruta',
 )
+#Modelos del tenant, son la creación del productor
+TENANT_MODEL = "productortenant.Productor"  # app.Model
+TENANT_DOMAIN_MODEL = "productortenant.Domain"
 
 INSTALLED_APPS = list(set(SHARED_APPS + TENANT_APPS))
 
@@ -123,8 +126,9 @@ DATABASES = {
 
 #Esto es necesario para que se puedan trabajar tenants
 DATABASE_ROUTERS = (
-    'django_tenants.routers.TenantSyncRouter',
+    'tenant_schemas.routers.TenantSyncRouter',
 )
+
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
