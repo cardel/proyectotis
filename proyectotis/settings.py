@@ -36,7 +36,7 @@ SHARED_APPS = (
     #APP DE LA HERRAMIENTA DJANGO-TENANTS
     'tenant_schemas',
     #APP QUE CONTIENE EL MANEJO DE TENANTS
-    'gestionfruta',
+    'proyectotis',
 
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,7 +51,7 @@ TENANT_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.auth',
     'django.contrib.messages',
-
+    'gestionfruta',
 )
 
 INSTALLED_APPS = list(set(SHARED_APPS + TENANT_APPS))
