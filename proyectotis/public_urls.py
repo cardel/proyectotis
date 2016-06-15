@@ -4,7 +4,6 @@ from django.contrib import admin
 
 #Urls publicas
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
     url(r'^$', ProductorForm.as_view()),
-
+    url(r'^admin/', admin.site.urls),
 ]
