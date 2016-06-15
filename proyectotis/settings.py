@@ -35,7 +35,7 @@ ALLOWED_HOSTS = []
 #Aplicaciones utilizadas en el esquema publico de la herramienta / usadas por todos
 SHARED_APPS = (
     #APP DE LA HERRAMIENTA DJANGO-TENANTS
-    'tenant_schemas',
+    'django_tenants',
     #APP QUE CONTIENE EL MANEJO DE TENANTS
     'productortenant',
 
@@ -61,7 +61,7 @@ TENANT_DOMAIN_MODEL = "productortenant.Domain"
 INSTALLED_APPS = list(set(SHARED_APPS + TENANT_APPS))
 
 MIDDLEWARE_CLASSES = (
-    'tenant_schemas.middleware.TenantMiddleware',
+    'django_tenants.middleware.TenantMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'proyectotis.wsgi.application'
 DATABASES = {
         'default': {
             #'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'ENGINE': 'tenant_schemas.postgresql_backend',
+            'ENGINE': 'django_tenants.postgresql_backend',
             'NAME': 'tendencias',                  
             'USER': 'tendencias',
             'PASSWORD': 'tendencias',
@@ -104,21 +104,23 @@ DATABASES = {
 
 #Esto es necesario para que se puedan trabajar tenants
 DATABASE_ROUTERS = (
-    'tenant_schemas.routers.TenantSyncRouter',
+    'django_tenants.routers.TenantSyncRouter',
 )
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-)
-
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.core.context_processors.request',
-    'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.debug',
-    'django.core.context_processors.media',
-    'django.core.context_processors.static',
-    'django.contrib.messages.context_processors.messages',
-)
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates/templateProyecto'),],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
 
 
 ROOT_URLCONF = 'proyectotis.private_urls'
@@ -159,12 +161,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
-TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), '..', 'templates/templateProyecto').replace('\\', '/'),)
 
 #Staticos
 STATIC_URL = '/static/'
 STATICFILES_DIRS=(BASE_DIR,'static',)
 
 #Imagenes
-#MEDIA_URL = '/media/'
-#MEDIA_ROOT = BASE_DIR.child('media')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = (BASE_DIR,'media',)
