@@ -104,7 +104,7 @@ DATABASES = {
 
 #Esto es necesario para que se puedan trabajar tenants
 DATABASE_ROUTERS = (
-     'django_tenants.routers.TenantSyncRouter',
+    'django_tenants.routers.TenantSyncRouter',
 )
 TEMPLATES = [
     {
