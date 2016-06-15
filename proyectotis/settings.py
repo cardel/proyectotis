@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 #Aplicaciones utilizadas en el esquema publico de la herramienta / usadas por todos
 SHARED_APPS = (
     #APP DE LA HERRAMIENTA DJANGO-TENANTS
-    'django_tenants',
+    'gestionfruta',
     #APP QUE CONTIENE EL MANEJO DE TENANTS
     #'tenant',
 
@@ -51,7 +51,7 @@ TENANT_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.auth',
     'django.contrib.messages',
-    'gestionfruta',
+
 )
 
 INSTALLED_APPS = list(set(SHARED_APPS + TENANT_APPS))
