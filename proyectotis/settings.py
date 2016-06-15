@@ -96,11 +96,6 @@ TEMPLATES = [
     },
 ]
 
-TEMPLATE_LOADERS = (
-    'django_tenants.template_loaders.FilesystemLoader',
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader'
-)
 
 WSGI_APPLICATION = 'proyectotis.wsgi.application'
 

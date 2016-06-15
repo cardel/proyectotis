@@ -1,5 +1,4 @@
 from django.conf.urls import url
-
 from productortenant.views import ProductorForm
 from django.contrib import admin
 
