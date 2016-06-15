@@ -20,7 +20,7 @@ from django.contrib import admin
 import gestionfruta
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+   url(r'^admin/', admin.site.urls),
    url(r'^$', 'gestionfruta.views.inicio', name='inicio'),
 
 ]
