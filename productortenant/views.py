@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from .forms import ProductorForm
 from .models import Domain, Productor
 from django.views.generic import TemplateView
 
