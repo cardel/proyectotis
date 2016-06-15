@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 # Create your models here.
-from django_tenants.models import TenantMixin, DomainMixin
+from tenant_schemas.models import TenantMixin
 
 
 #Modelo para crear tenants
@@ -32,5 +32,3 @@ class Productor(TenantMixin):
     def __str__(self):
         return self.schema_name
 
-class Domain(DomainMixin):
-    pass
