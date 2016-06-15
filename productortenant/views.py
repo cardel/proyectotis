@@ -1,15 +1,19 @@
 from django.shortcuts import render
 from .models import Domain, Productor
-from django.views.generic import TemplateView
+from django.views.generic import FormView
 
 
 # Create your views here.
-class ProductorForm(TemplateView):
+class ProductorForm(FormView):
 
     template_name = "templateProyecto/index.html"
     titulo = "Registro Productor"
     model = Productor
     fields = ["tipo_documento", "dominio", "nombre", "fecha_nacimiento", "telefono", "correo"]
+
+    def get_context_data(self, **kwargs):
+        context = super(ProductorForm, self).get_context_data(**kwargs)
+        return context
 
     def form_valid(self,form):
         tenant_registrado = form.instance
