@@ -17,10 +17,10 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 
-from productortenant.views import ProductorForm
-
+import gestionfruta
 urlpatterns = [
    url(r'^admin/', admin.site.urls),
-   url(r'^$', ProductorForm.as_view(), name='registrarProductor'),
+   url(r'^$', gestionfruta.views.inicio, name='inicio'),
+
 ]
 

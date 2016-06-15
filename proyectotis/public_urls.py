@@ -1,9 +1,8 @@
 from django.conf.urls import url
 
-import gestionfruta
-
-#Urls propias de la aplicación
-#1. Registrar fruta
+from productortenant.views import ProductorForm
+#Urls publicas
 urlpatterns = [
-    url(r'^$', gestionfruta.views.inicio, name='inicio'),
+   url(r'^$', ProductorForm.as_view(), name='registrarProductor'),
+
 ]

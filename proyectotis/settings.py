@@ -77,6 +77,7 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'proyectotis.urls'
 PUBLIC_SCHEMA_URLCONF = 'proyectotis.public_urls'
+PUBLIC_SCHEMA_NAME = 'public'
 
 
 TEMPLATES = [
