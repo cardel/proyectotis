@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 # Create your models here.
-from tenant_schemas.models import TenantMixin
+from tenant_schemas.models import TenantMixin, DomainMixin
 
 
 #Modelo para crear tenants
@@ -19,6 +19,7 @@ class Productor(TenantMixin):
         choices=document_choices,
         default='CC'
     )
+    domain_url = models.CharField(max_length=100, default='miFinca')
     nombre = models.CharField(max_length=100)
     fecha_nacimiento =  models.DateField()
     telefono = models.CharField(max_length=100)
@@ -31,3 +32,5 @@ class Productor(TenantMixin):
     def __str__(self):
         return self.schema_name
 
+class Domain(DomainMixin):
+    pass
