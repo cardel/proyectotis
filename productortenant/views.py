@@ -1,24 +1,25 @@
 from django.shortcuts import render
 from .forms import ProductorForm
-from .models import Domain
+from .models import Domain, Productor
+from django.views.generic import TemplateView
+
 
 # Create your views here.
-def registrarProductor(request):
-    titulo = "Registro Productor"
-    form = ProductorForm(request.POST or None)
+class ProductorForm(TemplateView):
 
-    if form.is_valid():
+    template_name = "templateProyecto/index.html"
+    titulo = "Registro Productor"
+    model = Productor
+    fields = ["tipo_documento", "dominio", "nombre", "fecha_nacimiento", "telefono", "correo"]
+
+    def form_valid(self,form):
         tenant_registrado = form.instance
-        tenant_registrado.schema_name = tenant_registrado.nombre_tenant
-        formulario = form.save()
-        dominio_tenant = Domain(formulario.nombre_comercial+'.localhost',
-                                is_primary=True,
+        tenant_registrado.schema_name = tenant_registrado.domain_url
+        self.object = form.save()
+        dominio_tenant = Domain(domain=self.object.nombre_tenant+'.localhost',
+                                is_primary=Terue,
                                 tenant=tenant_registrado
                                 )
         dominio_tenant.save()
-        form.save()
+        return super(ProductorForm, self).form_valid(form)
 
-    context = {
-        "titulo": titulo,
-        "form": form
-    }
