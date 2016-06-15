@@ -19,7 +19,7 @@ from django.conf.urls import include, url
 import gestionfruta
 urlpatterns = [
 
-   url(r'^$', 'gestionfruta.views.inicio', name='inicio'),
+   url(r'^$', gestionfruta.views.inicio, name='inicio'),
 
 ]
 
