@@ -8,7 +8,7 @@ from .forms import GenerateProductors
 class ProductorForm(FormView):
     form_class = GenerateProductors
     success_url = "/"
-    template_name = "templateProyecto/index.html"
+    template_name = "inicio.html"
     titulo = "Registro Productor"
     model = Productor
     fields = ["tipo_documento", "dominio", "nombre", "fecha_nacimiento", "telefono", "correo"]
