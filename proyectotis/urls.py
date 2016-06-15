@@ -17,11 +17,11 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 
-import productortenant
+from productortenant.views import ProductorForm
 
 urlpatterns = [
    url(r'^admin/', admin.site.urls),
-    url(r'^$', productortenant.views.registrarProductor.registrarProductor, name='registrarProductor'),
+    url(r'^$', ProductorForm.as_view(), name='registrarProductor'),
 
 ]
 
