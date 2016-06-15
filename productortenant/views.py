@@ -21,10 +21,10 @@ class ProductorForm(FormView):
         tenant_registrado = form.instance
         tenant_registrado.schema_name = tenant_registrado.domain_url
         self.object = form.save()
-        dominio_tenant = Domain(domain=self.object.nombre_tenant+'.localhost',
-                                is_primary=True,
-                                tenant=tenant_registrado
-                                )
-        dominio_tenant.save()
+        #dominio_tenant = Domain(domain=self.object.nombre_tenant+'.localhost',
+        #                        is_primary=True,
+        #                        tenant=tenant_registrado
+        #                        )
+        #dominio_tenant.save()
         return super(ProductorForm, self).form_valid(form)
 
