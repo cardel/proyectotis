@@ -60,23 +60,16 @@ TENANT_DOMAIN_MODEL = "productortenant.Domain"
 
 INSTALLED_APPS = list(set(SHARED_APPS + TENANT_APPS))
 
-
-
-MIDDLEWARE_CLASSES = [
-    #Agregar esta clase para el uso de tenants
+MIDDLEWARE_CLASSES = (
     'tenant_schemas.middleware.TenantMiddleware',
-    'tenant_schemas.middleware.SuspiciousTenantMiddleware',
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-]
-
+    # Uncomment the next line for simple clickjacking protection:
+    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+)
 
 
 WSGI_APPLICATION = 'proyectotis.wsgi.application'
