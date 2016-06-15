@@ -16,7 +16,7 @@ class ProductorForm(TemplateView):
         tenant_registrado.schema_name = tenant_registrado.domain_url
         self.object = form.save()
         dominio_tenant = Domain(domain=self.object.nombre_tenant+'.localhost',
-                                is_primary=Terue,
+                                is_primary=True,
                                 tenant=tenant_registrado
                                 )
         dominio_tenant.save()
