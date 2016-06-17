@@ -1,0 +1,177 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 0d3929a4476214b80cb6ac5181c2e553464e9cf2)
++++ .idea/workspace.xml	(revision )
+@@ -2,8 +2,9 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="70710f70-a71b-48aa-bdf1-a5a78c97cbfe" name="Default" comment="">
+-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/productortenant/migrations/0002_productor_domain_url.py" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productortenant/models.py" afterPath="$PROJECT_DIR$/productortenant/models.py" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productortenant/views.py" afterPath="$PROJECT_DIR$/productortenant/views.py" />
+     </list>
+     <ignored path="proyectotis.iws" />
+     <ignored path=".idea/workspace.xml" />
+@@ -24,21 +25,21 @@
+   </component>
+   <component name="FileEditorManager">
+     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
++      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+         <entry file="file://$PROJECT_DIR$/proyectotis/settings.py">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state vertical-scroll-proportion="0.8788396">
++            <state vertical-scroll-proportion="0.0">
+               <caret line="107" column="1" selection-start-line="107" selection-start-column="1" selection-end-line="107" selection-end-column="1" />
+               <folding />
+             </state>
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
++      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+         <entry file="file://$PROJECT_DIR$/productortenant/views.py">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state vertical-scroll-proportion="0.0">
+-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
++            <state vertical-scroll-proportion="0.55119455">
++              <caret line="19" column="67" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
+               <folding>
+                 <element signature="e#0#35#0" expanded="true" />
+               </folding>
+@@ -46,16 +47,6 @@
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/gestionfruta/models.py">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state vertical-scroll-proportion="0.0">
+-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+-              <folding />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+       <file leaf-file-name="public_urls.py" pinned="false" current-in-tab="false">
+         <entry file="file://$PROJECT_DIR$/proyectotis/public_urls.py">
+           <provider selected="true" editor-type-id="text-editor">
+@@ -72,7 +63,7 @@
+         <entry file="file://$PROJECT_DIR$/productortenant/models.py">
+           <provider selected="true" editor-type-id="text-editor">
+             <state vertical-scroll-proportion="0.0">
+-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
++              <caret line="21" column="13" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="13" />
+               <folding />
+             </state>
+           </provider>
+@@ -107,10 +98,10 @@
+         <option value="$PROJECT_DIR$/proyectotis/private_urls.py" />
+         <option value="$PROJECT_DIR$/productortenant/middleware.py" />
+         <option value="$PROJECT_DIR$/templates/templateProyecto/index.html" />
+-        <option value="$PROJECT_DIR$/productortenant/models.py" />
+         <option value="$PROJECT_DIR$/proyectotis/public_urls.py" />
+-        <option value="$PROJECT_DIR$/productortenant/views.py" />
+         <option value="$PROJECT_DIR$/proyectotis/settings.py" />
++        <option value="$PROJECT_DIR$/productortenant/models.py" />
++        <option value="$PROJECT_DIR$/productortenant/views.py" />
+       </list>
+     </option>
+   </component>
+@@ -699,19 +690,9 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/productortenant/views.py">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.0">
+-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+-          <folding>
+-            <element signature="e#0#35#0" expanded="true" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/gestionfruta/models.py">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.0">
++        <state vertical-scroll-proportion="0.029010238">
+           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+           <folding />
+         </state>
+@@ -720,16 +701,26 @@
+     <entry file="file://$PROJECT_DIR$/productortenant/models.py">
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.0">
+-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
++          <caret line="21" column="13" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="13" />
+           <folding />
+         </state>
+       </provider>
+     </entry>
+     <entry file="file://$PROJECT_DIR$/proyectotis/settings.py">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.8788396">
++        <state vertical-scroll-proportion="0.0">
+           <caret line="107" column="1" selection-start-line="107" selection-start-column="1" selection-end-line="107" selection-end-column="1" />
+           <folding />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/productortenant/views.py">
++      <provider selected="true" editor-type-id="text-editor">
++        <state vertical-scroll-proportion="0.55119455">
++          <caret line="19" column="67" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
++          <folding>
++            <element signature="e#0#35#0" expanded="true" />
++          </folding>
+         </state>
+       </provider>
+     </entry>
+\ No newline at end of file
+Index: productortenant/views.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- productortenant/views.py	(revision 0d3929a4476214b80cb6ac5181c2e553464e9cf2)
++++ productortenant/views.py	(revision )
+@@ -9,7 +9,7 @@
+     template_name = "index.html"
+     titulo = "Registro Productor"
+     model = Productor
+-    fields = ["tipo_documento", "dominio", "nombre", "fecha_nacimiento", "telefono", "correo"]
++    fields = ["tipo_documento", "url", "nombre", "fecha_nacimiento", "telefono", "correo"]
+ 
+     def get_context_data(self, **kwargs):
+         context = super(CrearProductor, self).get_context_data(**kwargs)
+@@ -17,7 +17,7 @@
+ 
+     def form_valid(self,form):
+         tenant_registrado = form.instance
+-        tenant_registrado.schema_name = tenant_registrado.domain_url
++        tenant_registrado.schema_name = tenant_registrado.nombreurl
+         self.object = form.save()
+         dominio_tenant = Domain(domain=self.object.nombre_tenant+'.localhost',
+                                 is_primary=True,
+Index: productortenant/models.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- productortenant/models.py	(revision 0d3929a4476214b80cb6ac5181c2e553464e9cf2)
++++ productortenant/models.py	(revision )
+@@ -19,7 +19,7 @@
+         choices=document_choices,
+         default='CC'
+     )
+-    domain_url = models.CharField(max_length=100, default='miFinca')
++    nombreurl = models.CharField(max_length=100)
+     nombre = models.CharField(max_length=100)
+     fecha_nacimiento =  models.DateField()
+     telefono = models.CharField(max_length=100)
+\ No newline at end of file

@@ -72,6 +72,10 @@ MIDDLEWARE_CLASSES = (
 )
 
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
 WSGI_APPLICATION = 'proyectotis.wsgi.application'
 
 
@@ -97,7 +101,8 @@ DATABASES = {
             'NAME': 'tendencias',                  
             'USER': 'tendencias',
             'PASSWORD': 'tendencias',
-            'HOST': '172.31.5.162',   #Servidor de base de datos Amazon
+            #'HOST': '172.31.5.162',   #Servidor de base de datos Amazon
+            'HOST': 'ec2-52-36-225-236.us-west-2.compute.amazonaws.com',
             'PORT': '5432',                    
         }
     }
@@ -125,7 +130,7 @@ TEMPLATES = [
 
 ROOT_URLCONF = 'proyectotis.private_urls'
 PUBLIC_SCHEMA_URLCONF = 'proyectotis.public_urls'
-
+PUBLIC_SCHEMA_NAME = 'public'
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
@@ -165,7 +170,9 @@ USE_TZ = True
 #Staticos
 STATIC_URL = '/static/'
 STATICFILES_DIRS=(BASE_DIR,'static',)
+STATIC_ROOT = os.path.join(BASE_DIR, '..', 'static_collected')
 
 #Imagenes
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-MEDIA_ROOT = (BASE_DIR,'media',)
+
