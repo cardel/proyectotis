@@ -35,7 +35,9 @@ ALLOWED_HOSTS = []
 #Aplicaciones utilizadas en el esquema publico de la herramienta / usadas por todos
 SHARED_APPS = (
     #APP DE LA HERRAMIENTA DJANGO-TENANTS
+    'django_tenants',
     #APP QUE CONTIENE EL MANEJO DE TENANTS
+
     'productortenant',
 
     'django.contrib.auth',
@@ -63,7 +65,7 @@ INSTALLED_APPS = list(set(SHARED_APPS + TENANT_APPS))
 
 MIDDLEWARE_CLASSES = [
     #Agregar esta clase para el uso de tenants
-    'tenant_schemas.middleware.TenantMiddleware',
+    'django_tenants.middleware.TenantMiddleware',
 
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
