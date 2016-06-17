@@ -24,6 +24,7 @@ SECRET_KEY = 'qe2i-@deobewo9hi%v5af#*re$1s@2ze=t-98-_q3r)#x9pf=m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = []
 
@@ -35,7 +36,7 @@ ALLOWED_HOSTS = []
 SHARED_APPS = (
     #APP DE LA HERRAMIENTA DJANGO-TENANTS
     #APP QUE CONTIENE EL MANEJO DE TENANTS
-    #'tenant',
+    'productortenant',
 
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -52,6 +53,9 @@ TENANT_APPS = (
     'django.contrib.messages',
     'gestionfruta',
 )
+#Modelos del tenant, son la creación del productor
+TENANT_MODEL = "productortenant.Productor"  # app.Model
+TENANT_DOMAIN_MODEL = "productortenant.Domain"
 
 INSTALLED_APPS = list(set(SHARED_APPS + TENANT_APPS))
 
@@ -60,37 +64,22 @@ INSTALLED_APPS = list(set(SHARED_APPS + TENANT_APPS))
 MIDDLEWARE_CLASSES = [
     #Agregar esta clase para el uso de tenants
     'tenant_schemas.middleware.TenantMiddleware',
-    #Clasee normales
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+
     'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
 ]
 
-ROOT_URLCONF = 'proyectotis.urls'
 
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
 WSGI_APPLICATION = 'proyectotis.wsgi.application'
 
 
@@ -111,11 +100,14 @@ WSGI_APPLICATION = 'proyectotis.wsgi.application'
 #Configuración Web Servidor analogo
 DATABASES = {
         'default': {
-            'ENGINE': 'tenant_schemas.postgresql_backend',
-            'NAME': 'tendencias',                  
+
+            #'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'ENGINE': 'django_tenants.postgresql_backend',
+            'NAME': 'tendencias',
             'USER': 'tendencias',
             'PASSWORD': 'tendencias',
-            'HOST': '172.31.5.162',   #Servidor de base de datos Amazon
+            #'HOST': '172.31.5.162',   #Servidor de base de datos Amazon
+            'HOST': 'ec2-52-36-225-236.us-west-2.compute.amazonaws.com',
             'PORT': '5432',                    
         }
     }
@@ -129,6 +121,26 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     #
 )
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates/templateProyecto'),],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+
+ROOT_URLCONF = 'proyectotis.private_urls'
+PUBLIC_SCHEMA_URLCONF = 'proyectotis.public_urls'
+PUBLIC_SCHEMA_NAME = 'public'
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
@@ -168,7 +180,9 @@ USE_TZ = True
 #Staticos
 STATIC_URL = '/static/'
 STATICFILES_DIRS=(BASE_DIR,'static',)
+STATIC_ROOT = os.path.join(BASE_DIR, '..', 'static_collected')
 
 #Imagenes
-#MEDIA_URL = '/media/'
-#MEDIA_ROOT = BASE_DIR.child('media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+

@@ -13,11 +13,10 @@ def inicio(request):
     if form.is_valid():
         form.save()
 
-
     context = {
         "titulo": titulo,
         "form": form
     }
 
-    return render(request, "templateProyecto/index.html", context)
+    return render(request, "index.html", context)
 
