@@ -1,0 +1,14 @@
+/*
+Estilos del proyecto
+*/
+input{
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+textarea{
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
