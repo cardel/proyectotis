@@ -12,3 +12,10 @@ class Registrado(models.Model):
     temperatura = models.IntegerField(default=0)
     def __unicode__(self):
         return self.nombre
+
+
+#Registrar finca
+
+
+
+#Registrar
