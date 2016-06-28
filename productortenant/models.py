@@ -9,22 +9,12 @@ from django_tenants.models import TenantMixin, DomainMixin
 #Modelo para crear tenants
 class Productor(TenantMixin):
 
-    document_choices = (
-        ('CC', 'Cédula'),
-        ('NIT', 'NIT'),
-        ('OTHER', 'Otro'),
-    )
-    tipo_documento = models.CharField(
-        max_length=3,
-        choices=document_choices,
-        default='CC'
-    )
-    identificacion = models.CharField(max_length=100, default=0)
-    url = models.CharField(max_length=100, default="minFinca")
-    nombre = models.CharField(max_length=100)
-    fecha_nacimiento =  models.DateField()
-    telefono = models.CharField(max_length=100)
-    correo = models.CharField(max_length=100)
+    tipo_documento = models.CharField(max_length=3)
+    identificacion = models.CharField(max_length=100, default=0,null=False)
+    nombre = models.CharField(max_length=100, null=False)
+    fecha_nacimiento =  models.DateField(null=False)
+    telefono = models.CharField(max_length=100, null=False)
+    correo = models.CharField(max_length=100, null=False)
     fecha_creacion = models.DateField(auto_now_add=True)
 
     # Esto crea automaticamente un esquema cuando se crea un productor
