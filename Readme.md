@@ -8,3 +8,6 @@
 
 - <b>productortenant:</b> Es para registrar un tenant
 - <b>gestionfruta:</b> Todo lo relativo a gestionar fruta
+
+##Crear SuperUsuario
+manage.py createsuperuser - username = admin - email = admin@admin.com

@@ -19,8 +19,9 @@ class CrearProductorForm(forms.ModelForm):
     nombre = forms.CharField(max_length=100, label="Nombre completo")
     fecha_nacimiento =  forms.DateField(widget=SelectDateWidget,label="Fecha nacimiento")
     telefono = forms.CharField(max_length=100,label="Teléfono")
-    correo = forms.EmailField(label="Correo electrónico")
-
+    
+    usuario = forms.CharField(label="Usuario")
+    password = forms.CharField(label="Contraseña", min_length=8, widget=forms.PasswordInput)
 
 
 

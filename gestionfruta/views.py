@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.views.generic import CreateView, TemplateView
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 
@@ -6,6 +9,13 @@ from .forms import RegistradoForm, RegistradoFruta
 from .models import RegistrarFruta, RegistrarFinca
 
 
+
+class Home(TemplateView):
+    template_name = 'gestionfruta/inicio.html'
+
+
+
+##Borrar
 def inicio(request):
     titulo = "Registro Datos Fruta"
     form = RegistradoForm(request.POST or None)

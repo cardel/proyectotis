@@ -1,0 +1,10 @@
+{% extends 'templatePrivateTenant.html' %}
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<h4>Bievenido {{user}}</h4>
+{% endif %}
+
+{% endblock content %}

@@ -121,7 +121,7 @@ DATABASE_ROUTERS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
-    #
+
 )
 TEMPLATES = [
     {
@@ -143,7 +143,10 @@ TEMPLATES = [
 ROOT_URLCONF = 'proyectotis.private_urls'
 PUBLIC_SCHEMA_URLCONF = 'proyectotis.public_urls'
 PUBLIC_SCHEMA_NAME = 'public'
-# Password validation
+
+LOGIN_URL = 'mysite_login'
+LOGOUT_URL = 'mysite_logout'
+LOGIN_REDIRECT_URL = '/'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [

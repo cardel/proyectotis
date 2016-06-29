@@ -1,0 +1,23 @@
+{% extends 'templatePrivateTenant.html' %}
+
+
+{% block content %}
+<h1>Iniciar sesión</h1>
+ {% if user.is_authenticated %}
+<p>
+  Ya estas autenticado en el sitio :)
+</p>
+{% else %}
+<p>
+  Ingresa los datos para ingresar al sitio
+</p>
+<p>
+ <form action="{% url "mysite_login" %}" method="post" accept-charset="utf-8">
+    {{ form.as_p}}
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ next }}">
+    <input class="btn btn-default" type="submit" value="Iniciar Sesión">
+  </form>
+</p>
+{% endif %}
+{% endblock content %}

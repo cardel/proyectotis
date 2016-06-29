@@ -14,12 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
+from gestionfruta.views import Home
+from django.core.urlresolvers import reverse_lazy
 
 
 import gestionfruta
 urlpatterns = [
 
-   url(r'^$', 'gestionfruta.views.inicio', name='inicio'),
+   url(r'^$', Home.as_view()),
+  #Autenticacion
+   url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'gestionfruta/login.html'},
+        name='mysite_login'),
+   url(r'^logout/$', 'django.contrib.auth.views.logout',
+        {'next_page': "/"}, name='mysite_logout'),
 
 ]
 
