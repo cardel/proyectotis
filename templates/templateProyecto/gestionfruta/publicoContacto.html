@@ -1,0 +1,28 @@
+{% extends 'templatePrivateTenant.html' %}
+
+
+{% block content %}
+
+<h2>Contactanos</h2>
+
+
+{% if contacto|length > 0%}
+    <h3>Información de contacto</h3>
+    <p>Estimado visitante usted nos puede contactar a través de estos medios:</p>
+    {% for field in contacto %}
+
+    <p> <span style="font-weight:bold">Dirección: </span> {{field.direccion}} </p>
+    <p> <span style="font-weight:bold">Teléfono: </span> {{field.telefono}} </p>
+    <p> <span style="font-weight:bold">Correo de contacto: </span> {{field.email}} </p>
+    {% endfor %}
+<br/>
+<br/>
+{%else%}
+<p>De momento nos encontramos construyendo la página, lamentamos las molestias</p>
+{% endif %}
+
+{% endblock content %}
+
+{% block activo6 %}
+class="active"
+{% endblock %}

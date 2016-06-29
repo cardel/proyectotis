@@ -1,0 +1,35 @@
+{% extends 'templatePrivateTenant.html' %}
+
+
+{% block content %}
+
+<h2>Nuestra finca</h2>
+
+    {% if finca|length > 0%}
+        <p>Esta es nuestra finca, acá producimos las mejores frutas para ustedes</p>
+
+        <br/>
+
+        <!--Asi sea uno de la lista toca iterar-->
+        {%for field in finca%}
+
+            <p> <span style="font-weight:bold">Nombre finca: </span> {{field.nombre}} </p>
+            <p> <span style="font-weight:bold">Municipio finca: </span> {{field.municipio}} </p>
+            <p> <span style="font-weight:bold">Deparrtamento finca: </span> {{field.departamento}} </p>
+            <p> <span style="font-weight:bold">Descripción finca: </span> {{field.descripcion}} </p>
+            <p> <span style="font-weight:bold">Imagen finca: </span>  </p>
+            <p style="text-align:center"><img src="/media/{{field.imagen}}" alt="Imagen finca" height="400px" width="400px"/></p>
+            {%endfor%}
+
+        {% else %}
+        <p>Aún nos encontramos en construcción, por favor tenga paciencia</p>
+
+    {% endif %}
+        <br/>
+        <br/>
+{% endblock content %}
+
+{% block activo5 %}
+class="active"
+{% endblock %}
+

@@ -4,7 +4,14 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-<h4>Bievenido {{user}}</h4>
+<h4>Bienvenido {{user}}</h4>
+
+Información usuario autenticado
+
+{%else%}
+
+Información usuario no autenticado
+
 {% endif %}
 
 {% endblock content %}

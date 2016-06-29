@@ -1,0 +1,46 @@
+<!-- Cargar template proyecto -->
+{% extends 'templatePublicTenant.html' %}
+
+
+<!-- Pagina inicial -->
+
+{% block content %}
+<h1>Todos los productos</h1>
+<p>A continuación les mostramos los productos que se tienen y el sitio donde debe accederlos</p>
+
+<h3>Lista de finca por productor</h3>
+
+
+{% if reporte|length > 0%}
+<table border="1">
+    <th>Nombre</th>
+    <th>Municipio</th>
+    <th>Departamento</th>
+    <th>Descripción</th>
+    <th>Imagen Finca </th>
+    <th>Enlace productor</th>
+    {% for rep in reporte %}
+
+        {%for item in rep.info %}
+        <tr>
+            <td>{{item.fields.nombre}}</td>
+            <td>{{item.fields.municipio}}</td>
+            <td>{{item.fields.departamento}}</td>
+            <td>{{item.fields.descripcion}}</td>
+            <td> <p style="text-align:center"><img src="http://{{rep.url}}/media/{{item.fields.imagen}}" alt="Imagen fruta" height="150px" width="150px"/></p></td>
+            <td> <a href="http://{{rep.url}}" target="_blank">{{rep.url}}</a></td>
+        </tr>
+        {%endfor %}
+    {% endfor %}
+</table>
+<br/>
+<br/>
+{%else%}
+<h4>Aviso:</h4> No hay fincas registradas.
+{%endif %}
+
+{% endblock content %}
+
+{% block activo4%}
+class="active"
+{% endblock %}

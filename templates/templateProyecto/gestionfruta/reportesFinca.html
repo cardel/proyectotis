@@ -1,0 +1,61 @@
+{% extends 'templatePrivateTenant.html' %}
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<h2>Administrar frutas</h2>
+
+<h4>Bienvenido {{user}}</h4>
+
+<p>A continuación usted va a administrar los datos de las frutas</p>
+<p>
+<h3>Agregar fruta</h3>
+  <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+     {{form.as_p}}
+     <input type="submit" value="Registrar">
+  </form>
+</p>
+
+<h3>Lista de frutas</h3>
+{% if fruta|length > 0%}
+<table border="1">
+    <th>Nombre</th>
+    <th>Variedad</th>
+    <th>Area de cultivo</th>
+    <th>Producción mensual</th>
+    <th>Tipo terreno</th>
+    <th>Altura Producción</th>
+    <th>Temperatura Producción</th>
+    <th>Imagen </th>
+    <th>Editar</th>
+    {% for f in fruta %}
+    <tr>
+        <td>{{f.nombre}}</td>
+        <td>{{f.variedad}}</td>
+        <td>{{f.areacultivo}}</td>
+        <td>{{f.produccionmes}}</td>
+        <td>{{f.tipoterreno}}</td>
+        <td>{{f.msnm}}</td>
+        <td>{{f.temperatura}}</td>
+        <td> <p style="text-align:center"><img src="/media/{{f.imagen}}" alt="Imagen fruta" height="150px" width="150px"/></p></td>
+        <td> <a href="/editarFruta/{{f.id}}">Editar fruta</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<br/>
+<br/>
+{%else%}
+<h4>Aviso:</h4> Usted no tiene frutas registradas.
+{%endif %}
+{% else %}
+<h2>Error</h2>
+<p>Usted debe estar autenticado para ingresar este sitio</p>
+{% endif %}
+
+{% endblock content %}
+
+{% block activo4 %}
+class="active"
+{% endblock %}

@@ -1,0 +1,52 @@
+<!-- Cargar template proyecto -->
+{% extends 'templatePublicTenant.html' %}
+
+
+<!-- Pagina inicial -->
+
+{% block content %}
+<h1>Todos los productos</h1>
+<p>A continuación les mostramos los productos que se tienen y el sitio donde debe accederlos</p>
+
+<h3>Lista de frutas por producto</h3>
+
+
+{% if reporte|length > 0%}
+<table border="1">
+    <th>Nombre</th>
+    <th>Variedad</th>
+    <th>Area de cultivo</th>
+    <th>Producción mensual</th>
+    <th>Tipo terreno</th>
+    <th>Altura Producción</th>
+    <th>Temperatura Producción</th>
+    <th>Imagen </th>
+    <th>Enlace Productor</th>
+    {% for rep in reporte %}
+
+        {%for item in rep.info %}
+        <tr>
+            <td>{{item.fields.nombre}}</td>
+            <td>{{item.fields.variedad}}</td>
+            <td>{{item.fields.areacultivo}}</td>
+            <td>{{item.fields.produccionmes}}</td>
+            <td>{{item.fields.tipoterreno}}</td>
+            <td>{{item.fields.msnm}}</td>
+            <td>{{item.fields.temperatura}}</td>
+            <td> <p style="text-align:center"><img src="http://{{rep.url}}/media/{{item.fields.imagen}}" alt="Imagen fruta" height="150px" width="150px"/></p></td>
+            <td> <a href="http://{{rep.url}}" target="_blank">{{rep.url}}</a></td>
+        </tr>
+        {%endfor %}
+    {% endfor %}
+</table>
+<br/>
+<br/>
+{%else%}
+<h4>Aviso:</h4> Usted no tiene frutas registradas.
+{%endif %}
+
+{% endblock content %}
+
+{% block activo4 %}
+class="active"
+{% endblock %}

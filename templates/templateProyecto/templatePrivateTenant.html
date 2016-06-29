@@ -1,5 +1,6 @@
 <!-- Plantilla base del proyecto -->
 {% load staticfiles %}
+{% load bootstrap3 %}
 
 <!DOCTYPE html>
 <html lang="es">
@@ -30,12 +31,12 @@
         <!-- class="active" -->
         <li {% block activo1 %} {% endblock %}><a href="/">Inicio</a></li>
         {% if user.is_authenticated %}
-        <li {% block activo2 %} {% endblock %}><a href="/crearFinca">Administra tus productos</a></li>
-        <li {% block activo3 %} {% endblock %}><a href="/contacto">Administra tu finca</a></li>
-        <li {% block activo4 %} {% endblock %}><a href="/contacto">Administra tus datos</a></li>
+        <li {% block activo2 %} {% endblock %}><a href="/adminfruta">Administra tus productos</a></li>
+        <li {% block activo3 %} {% endblock %}><a href="/adminfinca">Administra tu finca</a></li>
+        <li {% block activo4 %} {% endblock %}><a href="/adminContacto">Administra tus datos</a></li>
         {% endif %}
-        <li {% block activo5 %} {% endblock %}><a href="/contacto">Nuestra Finca</a></li>
-        <li {% block activo6 %} {% endblock %}><a href="/contacto">Nuestros Productos</a></li>
+        <li {% block activo5 %} {% endblock %}><a href="/finca">Nuestra Finca</a></li>
+        <li {% block activo6 %} {% endblock %}><a href="/fruta">Nuestros Productos</a></li>
         <li {% block activo7 %} {% endblock %}><a href="/contacto">Contactanos</a></li>
       </ul>
       -<ul class="nav navbar-nav navbar-right">

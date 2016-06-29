@@ -1,5 +1,6 @@
 <!-- Plantilla base del proyecto -->
 {% load staticfiles %}
+{% load bootstrap3 %}
 
 <!DOCTYPE html>
 <html lang="es">
@@ -31,6 +32,8 @@
         <li {% block activo1 %} {% endblock %}><a href="/">Inicio</a></li>
         <li {% block activo2 %} {% endblock %}><a href="/crearFinca">Registra tu página</a></li>
         <li {% block activo3 %} {% endblock %}><a href="/contacto">Contacto</a></li>
+        <li {% block activo4 %} {% endblock %}><a href="/reportes">Reportes</a></li>
+
       </ul>
       <!--<ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>

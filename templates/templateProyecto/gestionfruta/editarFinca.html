@@ -1,0 +1,28 @@
+{% extends 'templatePrivateTenant.html' %}
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<h2>Editar datos finca</h2>
+
+<h4>Bienvenido {{user}}</h4>
+
+<p>A continuación usted va a editar los datos de la finca</p>
+<p>
+  <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+     {{form.as_p}}
+     <input type="submit" value="Editar">
+  </form>
+</p>
+{% else %}
+<h2>Error</h2>
+<p>Usted debe estar autenticado para ingresar este sitio</p>
+{% endif %}
+
+{% endblock content %}
+
+{% block activo3 %}
+class="active"
+{% endblock %}

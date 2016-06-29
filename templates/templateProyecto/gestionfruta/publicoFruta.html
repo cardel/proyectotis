@@ -1,0 +1,45 @@
+{% extends 'templatePrivateTenant.html' %}
+
+
+{% block content %}
+
+
+<h2>Nuestros productos</h2>
+
+
+<p>A continuación verá la lista de nuestras frutas</p>
+
+<h3>Lista de frutas</h3>
+{% if fruta|length > 0%}
+<table border="1">
+    <th>Nombre</th>
+    <th>Variedad</th>
+    <th>Area de cultivo</th>
+    <th>Producción mensual</th>
+    <th>Tipo terreno</th>
+    <th>Altura Producción</th>
+    <th>Temperatura Producción</th>
+    <th>Imagen </th>
+    {% for f in fruta %}
+    <tr>
+        <td>{{f.nombre}}</td>
+        <td>{{f.variedad}}</td>
+        <td>{{f.areacultivo}}</td>
+        <td>{{f.produccionmes}}</td>
+        <td>{{f.tipoterreno}}</td>
+        <td>{{f.msnm}}</td>
+        <td>{{f.temperatura}}</td>
+        <td> <p style="text-align:center"><img src="/media/{{f.imagen}}" alt="Imagen fruta" height="150px" width="150px"/></p></td>
+    </tr>
+    {% endfor %}
+</table>
+{%else%}
+<p>Nos encontramos construyendo nuestro sitio, lamentamos las molestias</p>
+{%endif%}
+<br/>
+<br/>
+{% endblock content %}
+
+{% block activo6 %}
+class="active"
+{% endblock %}

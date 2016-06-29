@@ -1,0 +1,52 @@
+{% extends 'templatePrivateTenant.html' %}
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<h2>Registrar finca</h2>
+
+<h4>Bienvenido {{user}}</h4>
+    {% if finca|length > 0%}
+        <p>Usted ha registrado los datos de su finca, si desea editarlos haga clic en la opción editar</p>
+
+        <br/>
+
+        <!--Asi sea uno de la lista toca iterar-->
+        {%for field in finca%}
+            <p style="text-align:center">
+                <a href="/editarFinca/{{field.id}}">Editar Finca</a>
+            </p>
+            <p> <span style="font-weight:bold">Nombre finca: </span> {{field.nombre}} </p>
+            <p> <span style="font-weight:bold">Municipio finca: </span> {{field.municipio}} </p>
+            <p> <span style="font-weight:bold">Deparrtamento finca: </span> {{field.departamento}} </p>
+            <p> <span style="font-weight:bold">Descripción finca: </span> {{field.descripcion}} </p>
+            <p> <span style="font-weight:bold">Imagen finca: </span>  </p>
+            <p style="text-align:center"><img src="/media/{{field.imagen}}" alt="Imagen finca" height="400px" width="400px"/></p>
+            {%endfor%}
+
+        {% else %}
+        <p>Usted no ha registrado los datos de su finca, por favor hágalo</p>
+            <!-- enctype="multipart/form-data" esto es necesario-->
+              <form method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                 {{form.as_p}}
+                 <input type="submit" value="Registrar Finca">
+              </form>
+        </p>
+
+
+    {% endif %}
+        <br/>
+        <br/>
+{% else %}
+<h2>Error</h2>
+<p>Usted debe estar autenticado para ingresar este sitio</p>
+{% endif %}
+
+{% endblock content %}
+
+{% block activo3 %}
+class="active"
+{% endblock %}
+

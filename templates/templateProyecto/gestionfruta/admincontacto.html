@@ -1,0 +1,50 @@
+{% extends 'templatePrivateTenant.html' %}
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<h2>Administrar información de contacto</h2>
+
+<h4>Bienvenido {{user}}</h4>
+
+
+
+
+{% if contacto|length > 0%}
+    <h3>Información de contacto</h3>
+    <p>Esta es la información que tenemos registrada de contacto de su sitio</p>
+    {% for field in contacto %}
+
+    <p style="text-align:center">
+        <a href="/editarContacto/{{field.id}}">Editar información</a>
+    </p>
+    <p> <span style="font-weight:bold">Dirección: </span> {{field.direccion}} </p>
+    <p> <span style="font-weight:bold">Teléfono: </span> {{field.telefono}} </p>
+    <p> <span style="font-weight:bold">Correo de contacto: </span> {{field.email}} </p>
+    {% endfor %}
+<br/>
+<br/>
+{%else%}
+<h4>Aviso:</h4> Usted no tiene información de contacto registrada
+<br/><br/>
+<p>Por favor establezca la información de contacto</p>
+<p>
+<h3>Establecer información de contacto</h3>
+  <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+     {{form.as_p}}
+     <input type="submit" value="Registrar">
+  </form>
+</p>
+{%endif %}
+{% else %}
+<h2>Error</h2>
+<p>Usted debe estar autenticado para ingresar este sitio</p>
+{% endif %}
+
+{% endblock content %}
+
+{% block activo4 %}
+class="active"
+{% endblock %}
