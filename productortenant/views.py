@@ -28,7 +28,7 @@ class CrearProductor(CreateView):
     success_url = "/sucess"
 
     def form_valid(self, form):
-        dominio = "ec2-52-38-150-62.us-west-2.compute.amazonaws.com"
+        dominio = "evalab.univalle.edu.co"
         tenant_registrado = form.instance
         self.object = form.save()
         dominio_tenant = Domain(domain=self.object.schema_name+'.'+dominio,
@@ -68,7 +68,7 @@ class ReporteProductosView(TemplateView):
         context = super(ReporteProductosView, self).get_context_data(**kwargs)
         reporte = []
         tenants = Productor.objects.exclude(schema_name='public')
-        dominio = "ec2-52-38-150-62.us-west-2.compute.amazonaws.com:8080"
+        dominio = "evalab.univalle.edu.co:8080"
         for tenant in tenants:
             connection.set_tenant(tenant)
             reporte_actual = {
@@ -92,7 +92,7 @@ class ReporteFincaView(TemplateView):
     template_name = 'productortenant/reportes/reportesFinca.html'
 
     def get_context_data(self, **kwargs):
-        dominio = "ec2-52-38-150-62.us-west-2.compute.amazonaws.com:8080"
+        dominio = "evalab.univalle.edu.co:8080"
         context = super(ReporteFincaView, self).get_context_data(**kwargs)
         reporte = []
         tenants = Productor.objects.exclude(schema_name='public')
