@@ -88,31 +88,31 @@ WSGI_APPLICATION = 'proyectotis.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django_tenants.postgresql_backend',
-        'NAME': 'tendencias',
-        'USER': 'tendencias',
-        'PASSWORD': 'tendencias',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django_tenants.postgresql_backend',
+#        'NAME': 'multitenant',
+#        'USER': 'multitenant',
+#        'PASSWORD': 'multitenant',
+#        'HOST': '127.0.0.1',
+#        'PORT': '5432',
+#    }
+#}
 
 #Configuración Web Servidor analogo
-#DATABASES = {
-#        'default': {
+DATABASES = {
+        'default': {
 
 #            #'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#            'ENGINE': 'django_tenants.postgresql_backend',
-#            'NAME': 'tendencias',
-#            'USER': 'tendencias',
-#            'PASSWORD': 'tendencias',
-#            'HOST': '172.31.5.162',   #Servidor de base de datos Amazon
+            'ENGINE': 'django_tenants.postgresql_backend',
+            'NAME': 'tendencias',
+            'USER': 'tendencias',
+            'PASSWORD': 'tendencias',
+            'HOST': '172.31.5.162',   #Servidor de base de datos Amazon
 #            'HOST': 'ec2-52-36-225-236.us-west-2.compute.amazonaws.com',
-#           'PORT': '5432',
-#        }
-#    }
+            'PORT': '5432',
+        }
+    }
 
 #Esto es necesario para que se puedan trabajar tenants
 DATABASE_ROUTERS = (
