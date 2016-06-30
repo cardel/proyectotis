@@ -91,9 +91,9 @@ WSGI_APPLICATION = 'proyectotis.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django_tenants.postgresql_backend',
-        'NAME': 'multitenant',
-        'USER': 'multitenant',
-        'PASSWORD': 'multitenant',
+        'NAME': 'tendencias',
+        'USER': 'tendencias',
+        'PASSWORD': 'tendencias',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
