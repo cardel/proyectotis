@@ -25,3 +25,13 @@ class Productor(TenantMixin):
 
 class Domain(DomainMixin):
     pass
+
+#Departamento
+
+class Departamento(models.Model):
+    nombre = models.CharField(max_length=100)
+
+#Municipio
+class Municipio(models.Model):
+    departamento = models.ForeignKey(Departamento, on_delete=models.CASCADE)
+    nombre = models.CharField(max_length=100)

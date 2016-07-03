@@ -1,5 +1,7 @@
 from django.db import models
 import uuid
+from productortenant.models import Departamento, Municipio
+
 
 #Esta funcion agrega una ruta al tenant
 #Crea una carpeta aleatoria para evitar los usuarios se coman entre sí
@@ -26,8 +28,8 @@ class Fruta(models.Model):
 class Finca(models.Model):
 
     nombre = models.CharField(max_length=120, blank=True, null=True)
-    municipio = models.CharField(max_length=120, blank=True, null=True)
     departamento = models.CharField(max_length=100,null=True)
+    municipio = models.CharField(max_length=120, blank=True, null=True)
     imagen = models.ImageField(upload_to=rutaArchivoTenant, null=True, default="")
     descripcion = models.TextField(blank=False)
     def __unicode__(self):
@@ -42,4 +44,3 @@ class Contacto(models.Model):
     email = models.EmailField(blank=True, null=False, default="")
 
 
-#Registrar
