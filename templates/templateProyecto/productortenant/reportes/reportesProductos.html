@@ -1,9 +1,22 @@
 <!-- Cargar template proyecto -->
 {% extends 'templatePublicTenant.html' %}
+{% load staticfiles %}
 
 
 <!-- Pagina inicial -->
-
+{% block head %}
+{% if reporte|length > 0%}
+<script>
+    $(document).ready(function(){
+    $('#tabla1').dataTable( {
+    "language": {
+                "url": "{%static 'datatables/Spanish.json' %}"
+            }
+    } );
+})
+</script>
+{%endif %}
+{% endblock %}
 {% block content %}
 <h1>Todos los productos</h1>
 <p>A continuación les mostramos los productos que se tienen y el sitio donde debe accederlos</p>
@@ -12,7 +25,8 @@
 
 
 {% if reporte|length > 0%}
-<table border="1">
+<table id="tabla1" class="table" class="display" border="1" cellspacing="0" width="100%">
+    <thead>
     <th>Nombre</th>
     <th>Variedad</th>
     <th>Area de cultivo</th>
@@ -22,6 +36,8 @@
     <th>Temperatura Producción</th>
     <th>Imagen </th>
     <th>Enlace Productor</th>
+    </thead>
+    <tbody>
     {% for rep in reporte %}
 
         {%for item in rep.info %}
@@ -33,11 +49,12 @@
             <td>{{item.fields.tipoterreno}}</td>
             <td>{{item.fields.msnm}}</td>
             <td>{{item.fields.temperatura}}</td>
-            <td> <p style="text-align:center"><img src="http://{{rep.url}}/media/{{item.fields.imagen}}" alt="Imagen fruta" height="150px" width="150px"/></p></td>
-            <td> <a href="http://{{rep.url}}" target="_blank">{{rep.url}}</a></td>
+            <td> <p style="text-align:center"><img src="http://{{rep.url}}/media/{{item.fields.imagen}}" alt="Imagen fruta" height="150px" width="150px" class="img-thumbnail"/></p></td>
+            <td> <a href="http://{{rep.url}}" target="_blank" class="img-thumbnail">{{rep.url}}</a></td>
         </tr>
         {%endfor %}
     {% endfor %}
+    </tbody>
 </table>
 <br/>
 <br/>

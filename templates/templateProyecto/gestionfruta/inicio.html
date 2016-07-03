@@ -1,16 +1,34 @@
 {% extends 'templatePrivateTenant.html' %}
+{% load staticfiles %}
 
 
 {% block content %}
 
 {% if user.is_authenticated %}
-<h4>Bienvenido {{user}}</h4>
+<h2 style="text-align:center">Bienvenido {{user}}</h2>
 
-Información usuario autenticado
+<p style="text-align:center"><img src="{% static 'images/campesino.jpg' %}" alt="Imagen finca" class="img-thumbnail" width="500px"/></p>
+
+
+En esta página usted podrá:
+
+<ul>
+    <li>Administrar sus productos</li>
+    <li>Administrar la información de su finca</li>
+    <li>Administrar la información de contacto</li>
+</ul>
+
 
 {%else%}
 
-Información usuario no autenticado
+<p>Bienvenido a la página de un productor de fruta colombiano, esperamos que sea de su agrado</p>
+<p>En esta página usted podrá:</p>p>
+
+<ul>
+    <li>Consultar los productos</li>
+    <li>Consultar la información de la finca</li>
+    <li>Consultar la información de contacto</li>
+</ul>
 
 {% endif %}
 

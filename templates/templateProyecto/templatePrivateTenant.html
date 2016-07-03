@@ -6,13 +6,18 @@
 <html lang="es">
 <head>
   <title>Asofrutas, sitio Web</title>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css'  %}">
-  <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+  <script src="{% static 'js/jquery.min.js' %}"></script>
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'datatables/js/dataTables.min.js' %}"></script>
+   <script src="{% static 'datatables/js/jquery.dataTables.min.js' %}"></script>
+  <script src="{% static 'datatables/js/dataTables.bootstrap.min.js' %}"></script>
   <link href="{% static 'css/estilosProyecto.css'  %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'datatables/css/dataTables.bootstrap.min.css'  %}" rel="stylesheet" type="text/css">
+   {% block head %}
+  {% endblock %}
 </head>
 <body>
 
@@ -34,10 +39,11 @@
         <li {% block activo2 %} {% endblock %}><a href="/adminfruta">Administra tus productos</a></li>
         <li {% block activo3 %} {% endblock %}><a href="/adminfinca">Administra tu finca</a></li>
         <li {% block activo4 %} {% endblock %}><a href="/adminContacto">Administra tus datos</a></li>
-        {% endif %}
+        {% else %}
         <li {% block activo5 %} {% endblock %}><a href="/finca">Nuestra Finca</a></li>
         <li {% block activo6 %} {% endblock %}><a href="/fruta">Nuestros Productos</a></li>
         <li {% block activo7 %} {% endblock %}><a href="/contacto">Contactanos</a></li>
+        {% endif %}
       </ul>
       -<ul class="nav navbar-nav navbar-right">
       {% if user.is_authenticated %}
@@ -63,10 +69,12 @@
     </div>
     <div class="col-sm-2 sidenav">
       <div class="well">
-        <p>Publicidad 1</p>
+        <p style="font-size:10px">Universidad del valle <br/>Matriculas abiertas</p>
+        <a href="http://www.univalle.edu.co" target="_blank"> <img src="{% static 'images/propaganda1.png' %}" alt="Imagen univalle" height="80px" width="100px" class="img-thumbnail"/></a>
       </div>
       <div class="well">
-        <p>Publicidad 2</p>
+        <p style="font-size:10px">Debian <br/>El mejor Linux para tu PC</p>
+        <a href="http://www.debian.org" target="_blank"> <img src="{% static 'images/debian.png' %}" alt="Imagen univalle" height="100px" width="100px" class="img-thumbnail"/></a>
       </div>
     </div>
   </div>
