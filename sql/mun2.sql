@@ -101,10 +101,10 @@ INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (100,
 INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (101,'SAN CARLOS', 2); 
 INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (102,'SAN FRANCISCO', 2); 
 INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (103,'SAN JERONIMO', 2); 
-INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (104, SAN JOSE DE LA MONTAÑA, 2); 
+INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (104, 'SAN JOSE DE LA MONTAÑA', 2); 
 INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (105,'SAN JUAN DE URABA', 2); 
 INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (106,'SAN LUIS', 2); 
-INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (107, SAN PEDRO DE LOS MILAGROS, 2); 
+INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (107, 'SAN PEDRO DE LOS MILAGROS', 2); 
 INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (108,'SAN PEDRO DE URABA', 2); 
 INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (109,'SAN RAFAEL', 2); 
 INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (110,'SAN ROQUE', 2); 
@@ -569,7 +569,7 @@ INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (568,
 INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (569,'LA VEGA', 14); 
 INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (570,'LENGUAZAQUE', 14); 
 INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (571,'MACHETÁ', 14); 
-INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (572,'MADRID' 14); 
+INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (572,'MADRID', 14); 
 INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (573,'MANTA', 14); 
 INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (574,'MEDINA', 14); 
 INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (575,'MOSQUERA', 14); 
@@ -749,7 +749,7 @@ INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (748,
 INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (749,'PUERTO LÓPEZ', 20); 
 INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (750,'PUERTO RICO', 20); 
 INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (751,'RESTREPO', 20); 
-INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (752, SAN  JUAN DE ARAMA, 20); 
+INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (752, 'SAN  JUAN DE ARAMA', 20); 
 INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (753,'SAN CARLOS GUAROA', 20); 
 INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (754,'SAN JUANITO', 20); 
 INSERT INTO productortenant_municipio (id, nombre, departamento_id) VALUES (755,'SAN MARTÍN', 20); 
