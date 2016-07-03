@@ -1,5 +1,7 @@
 <!-- Cargar template proyecto -->
 {% extends 'templatePublicTenant.html' %}
+{% load staticfiles %}
+
 
 
 <!-- Pagina inicial -->
@@ -8,6 +10,7 @@
 <h1>Asofrutas</h1>
 <h3>Su web amiga</h3>
 <p>En esta web usted va tener la posibilidad de crear su propio sitio Web para que pueda ofrecer los productos de su finca</p>
+<p style="text-align:center"><img src="{% static 'images/fincaPagina.jpg' %}" alt="Imagen finca" class="img-thumbnail"/></p>
 {% endblock content %}
 
 {% block activo1 %}

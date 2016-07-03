@@ -10,9 +10,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css'  %}">
-  <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+  <script src="{% static 'js/jquery.min.js' %}"></script>
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
+   <script src="{% static 'datatables/js/jquery.dataTables.min.js' %}"></script>
+  <script src="{% static 'datatables/js/dataTables.bootstrap.min.js' %}"></script>
   <link href="{% static 'css/estilosProyecto.css'  %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'datatables/css/dataTables.bootstrap.min.css'  %}" rel="stylesheet" type="text/css">
+   {% block head %}
+  {% endblock %}
 </head>
 <body>
 
@@ -53,12 +58,14 @@
       {% block content %}
       {% endblock %}
     </div>
-    <div class="col-sm-2 sidenav">
+    <div class="col-sm-2 sidenav" id="bloquePropaganda">
       <div class="well">
-        <p>Publicidad 1</p>
+        <p style="font-size:10px">Universidad del valle <br/>Matriculas abiertas</p>
+        <a href="http://www.univalle.edu.co" target="_blank"> <img src="{% static 'images/propaganda1.png' %}" alt="Imagen univalle" height="80px" width="100px" class="img-thumbnail"/></a>
       </div>
       <div class="well">
-        <p>Publicidad 2</p>
+        <p style="font-size:10px">Debian <br/>El mejor Linux para tu PC</p>
+        <a href="http://www.debian.org" target="_blank"> <img src="{% static 'images/debian.png' %}" alt="Imagen univalle" height="100px" width="100px" class="img-thumbnail"/></a>
       </div>
     </div>
   </div>

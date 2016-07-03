@@ -1,8 +1,28 @@
 <!-- Cargar template proyecto -->
 {% extends 'templatePublicTenant.html' %}
+{% load staticfiles %}
 
 
 <!-- Pagina inicial -->
+{% block head %}
+{% if reporte|length > 0%}
+<script>
+    $(document).ready(function(){
+    $('#tabla1').dataTable( {
+    "language": {
+                "url": "{%static 'datatables/Spanish.json' %}"
+            }
+    } );
+})
+</script>
+{%endif %}
+<style>
+    #bloquePropaganda{
+    display: none;
+    }
+</style>
+{% endblock %}
+
 
 {% block content %}
 <h1>Todos los productos</h1>
@@ -12,29 +32,34 @@
 
 
 {% if reporte|length > 0%}
-<table border="1">
+
+<table id="tabla1" class="table" class="display" border="1" cellspacing="0" width="100%">
+    <thead>
     <th>Nombre</th>
     <th>Municipio</th>
     <th>Departamento</th>
     <th>Descripción</th>
     <th>Imagen Finca </th>
     <th>Enlace productor</th>
+    </thead>
+    <tbody>
     {% for rep in reporte %}
-
         {%for item in rep.info %}
         <tr>
             <td>{{item.fields.nombre}}</td>
             <td>{{item.fields.municipio}}</td>
             <td>{{item.fields.departamento}}</td>
             <td>{{item.fields.descripcion}}</td>
-            <td> <p style="text-align:center"><img src="http://{{rep.url}}/media/{{item.fields.imagen}}" alt="Imagen fruta" height="150px" width="150px"/></p></td>
+            <td> <p style="text-align:center"><img src="http://{{rep.url}}/media/{{item.fields.imagen}}" alt="Imagen fruta" height="150px" width="150px" class="img-thumbnail"/></p></td>
             <td> <a href="http://{{rep.url}}" target="_blank">{{rep.url}}</a></td>
         </tr>
         {%endfor %}
     {% endfor %}
+    </tbody>
 </table>
 <br/>
 <br/>
+
 {%else%}
 <h4>Aviso:</h4> No hay fincas registradas.
 {%endif %}

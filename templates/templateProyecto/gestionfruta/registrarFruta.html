@@ -1,5 +1,19 @@
 {% extends 'templatePrivateTenant.html' %}
+{% load staticfiles %}
 
+{% block head %}
+{% if fruta|length > 0%}
+<script>
+    $(document).ready(function(){
+    $('#tabla1').dataTable( {
+    "language": {
+                "url": "{%static 'datatables/Spanish.json' %}"
+            }
+    } );
+})
+</script>
+{%endif %}
+{% endblock %}
 
 {% block content %}
 
@@ -20,7 +34,8 @@
 
 <h3>Lista de frutas</h3>
 {% if fruta|length > 0%}
-<table border="1">
+<table id="tabla1" class="table" class="display" border="1" cellspacing="0" width="100%">
+    <thead>
     <th>Nombre</th>
     <th>Variedad</th>
     <th>Area de cultivo</th>
@@ -30,6 +45,8 @@
     <th>Temperatura Producción</th>
     <th>Imagen </th>
     <th>Editar</th>
+    </thead>
+        <tbody>
     {% for f in fruta %}
     <tr>
         <td>{{f.nombre}}</td>
@@ -43,6 +60,7 @@
         <td> <a href="/editarFruta/{{f.id}}">Editar fruta</a></td>
     </tr>
     {% endfor %}
+        </tbody>
 </table>
 <br/>
 <br/>
@@ -56,6 +74,6 @@
 
 {% endblock content %}
 
-{% block activo4 %}
+{% block activo2 %}
 class="active"
 {% endblock %}

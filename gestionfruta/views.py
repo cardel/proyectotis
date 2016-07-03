@@ -43,10 +43,14 @@ class Home(TemplateView):
 
 #Marca para indicar que se requiere estar logueado
 
+
+
+
 class RegistrarFincaView(CreateView):
     template_name =  'gestionfruta/registrarFinca.html'
     form_class = RegistrarFincaForm
     success_url = "/adminfinca"
+
 
     def get_context_data(self, **kwargs):
         context = super(RegistrarFincaView, self).get_context_data(**kwargs)
@@ -79,6 +83,9 @@ class RegistrarFrutaView(CreateView):
     template_name =  'gestionfruta/registrarFruta.html'
     form_class = RegistrarFrutaForm
     success_url = "/adminfruta"
+
+
+
 
     def get_context_data(self, **kwargs):
         context = super(RegistrarFrutaView, self).get_context_data(**kwargs)
