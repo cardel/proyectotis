@@ -86,7 +86,7 @@ class ReporteProductosView(TemplateView):
 
             for fruta in listaNombreFrutas:
 
-                f = str(serializers.serialize("python", fruta)).capitalize()
+                f = serializers.serialize("python", fruta)
 
                 if f in productosTotales:
                     productosTotales[f]=productosTotales[f]+1
