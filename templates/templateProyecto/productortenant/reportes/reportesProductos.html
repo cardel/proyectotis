@@ -43,20 +43,19 @@
        google.charts.setOnLoadCallback(drawChartB);
        function drawChartB() {
         var data = google.visualization.arrayToDataTable([
-          ['Fruta', 'Cantidad'],
-
-          {%for k,v in reportesGenerados.reporteTotalNombre.items %}
+          ['Altura', 'Cantidad de frutas'],
+          {%for k,v in reportesGenerados.reporteTotalAltura.items %}
              ['{{k}}', {{v}}],
             {%endfor%}
 
           ]);
 
         var options = {
-          title: 'Número de adsproductores por fruta',
+          title: 'Número frutas por altura (msnm)',
           legend: { position: 'none' },
         };
 
-        var chart = new google.visualization.BarChart(document.getElementById('chart_divB'));
+        var chart = new google.visualization.LineChart(document.getElementById('chart_divB'));
         chart.draw(data, options);
       }
 
@@ -67,18 +66,18 @@
         var data = google.visualization.arrayToDataTable([
           ['Fruta', 'Cantidad'],
 
-          {%for k,v in reportesGenerados.reporteTotalNombre.items %}
+          {%for k,v in reportesGenerados.reporteTotalTemperatura.items %}
              ['{{k}}', {{v}}],
             {%endfor%}
 
           ]);
 
         var options = {
-          title: 'Número de prosdductores por fruta',
+          title: 'Número de frutas por temperatura',
           legend: { position: 'none' },
         };
 
-        var chart = new google.visualization.BarChart(document.getElementById('chart_divC'));
+        var chart = new google.visualization.LineChart(document.getElementById('chart_divC'));
         chart.draw(data, options);
       }
     </script>
@@ -106,7 +105,7 @@
 <div id="chart_divB" class="img-thumbnail" style="width: 900px; height: 500px;"></div>
 
 <h3>Producción por temperatura</h3>
-{{reportesGenerados.reporteTotalTemperatura}}
+
 
 <div id="chart_divC" class="img-thumbnail" style="width: 900px; height: 500px;"></div>
 
