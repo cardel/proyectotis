@@ -54,6 +54,9 @@
           title: 'Número frutas por altura (msnm)',
           legend: { position: 'none' },
           series: [{'color': '#D9544C'}],
+          hAxis: {title: 'Cantidad'},
+          vAxis: {title: 'Fruta'},
+
         };
 
         var chart = new google.visualization.ScatterChart(document.getElementById('chart_divB'));
@@ -77,6 +80,9 @@
           title: 'Número de frutas por temperatura',
           legend: { position: 'none' },
           series: [{'color': '#AF54DC'}],
+          hAxis: {title: 'Temperatura (C)'},
+          vAxis: {title: 'Número de frutas'},
+
         };
 
         var chart = new google.visualization.ScatterChart(document.getElementById('chart_divC'));
