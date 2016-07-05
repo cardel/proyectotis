@@ -32,6 +32,8 @@
         var options = {
           title: 'Número de productores por fruta',
           legend: { position: 'none' },
+          hAxis: {title: 'Cantidad'},
+          vAxis: {title: 'Fruta'},
         };
 
         var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
@@ -54,12 +56,12 @@
           title: 'Número frutas por altura (msnm)',
           legend: { position: 'none' },
           series: [{'color': '#D9544C'}],
-          hAxis: {title: 'Cantidad'},
-          vAxis: {title: 'Fruta'},
+          hAxis: {title: 'Temperatura'},
+          vAxis: {title: 'Cantidad'},
 
         };
 
-        var chart = new google.visualization.ScatterChart(document.getElementById('chart_divB'));
+        var chart = new google.visualization.LineChart(document.getElementById('chart_divB'));
         chart.draw(data, options);
       }
 
@@ -85,7 +87,7 @@
 
         };
 
-        var chart = new google.visualization.ScatterChart(document.getElementById('chart_divC'));
+        var chart = new google.visualization.LineChart(document.getElementById('chart_divC'));
         chart.draw(data, options);
       }
     </script>
