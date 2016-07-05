@@ -23,7 +23,7 @@
         var data = google.visualization.arrayToDataTable([
           ['Departamento', 'Cantidad'],
 
-          {%for k,v in reportesGenerados.reporteTotalNombre.items %}
+          {%for k,v in reportesGenerados.fincasPorDepartamento.items %}
              ['{{k}}', {{v}}],
             {%endfor%}
 
