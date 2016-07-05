@@ -85,10 +85,13 @@ class ReporteProductosView(TemplateView):
             listaTemperaturaFrutas = Fruta.objects.values_list('temperatura')
 
             for fruta in listaNombreFrutas:
-                if fruta in productosTotales:
-                    productosTotales[fruta]=productosTotales[fruta]+1
+
+                f = str(serializers.serialize("python", fruta)).capitalize()
+
+                if f in productosTotales:
+                    productosTotales[f]=productosTotales[f]+1
                 else:
-                    productosTotales[fruta]=1
+                    productosTotales[f]=1
 
 
             for fruta in listamsnmFrutas:
