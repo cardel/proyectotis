@@ -15,6 +15,31 @@
     } );
 })
 </script>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart", "line"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Departamento', 'Cantidad'],
+
+          {%for k,v in reportesGenerados.reporteTotalNombre.items %}
+             ['{{k}}', {{v}}],
+            {%endfor%}
+
+          ]);
+
+        var options = {
+          title: 'Número de productores por fruta',
+          legend: { position: 'none' },
+          hAxis: {title: 'Cantidad'},
+          vAxis: {title: 'Departamento'},
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+</script>
 {%endif %}
 <style>
     #bloquePropaganda{
@@ -25,8 +50,13 @@
 
 
 {% block content %}
-<h1>Todos los productos</h1>
-<p>A continuación les mostramos los productos que se tienen y el sitio donde debe accederlos</p>
+<h1>Reportes por finca</h1>
+<p>A continuación les mostramos las fincas que se tienen y el sitio donde debe accederlos</p>
+
+<h3>Fincas por departamento</h3>
+
+<div id="chart_div" class="img-thumbnail" style="width: 600px; height: 400px; margin: 0 auto;"></div>
+
 
 <h3>Lista de finca por productor</h3>
 

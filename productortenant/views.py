@@ -144,8 +144,21 @@ class ReporteFincaView(TemplateView):
         reporte = []
         tenants = Productor.objects.exclude(schema_name='public')
 
+        fincasPorDepartamento = {}
+
         for tenant in tenants:
             connection.set_tenant(tenant)
+
+            listaNombreFinca = Fruta.objects.values_list('departamento')
+            for finca in listaNombreFinca:
+
+                f = str(finca[0]).capitalize()
+
+                if f in fincasPorDepartamento:
+                    fincasPorDepartamento[f]=fincasPorDepartamento[f]+1
+                else:
+                    fincasPorDepartamento[f]=1
+
             reporte_actual = {
                 'url': tenant.schema_name+'.'+dominio,
                 'info': serializers.serialize("python", Finca.objects.all())
@@ -157,7 +170,8 @@ class ReporteFincaView(TemplateView):
         connection.set_schema_to_public()
 
         contexto = {
-            'reporte' : reporte
+            'reporte' : reporte,
+            'fincasPorDepartamento' : fincasPorDepartamento,
         }
 
         context.update(contexto)
