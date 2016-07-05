@@ -121,7 +121,7 @@ class ReporteProductosView(TemplateView):
         reportesGenerados = {
             'reporteTotalNombre': productosTotales,
             'reporteTotalAltura': productoPorAltura,
-            'reporteTotalTemporatura': productoPorTemperatura,
+            'reporteTotalTemperatura': productoPorTemperatura,
 
         }
 

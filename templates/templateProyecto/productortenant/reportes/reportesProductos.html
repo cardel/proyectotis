@@ -76,7 +76,7 @@
 
 <h3>Producción total por fruta</h3>
 {{reportesGenerados.reporteTotalNombre}}
-{%for k,v in reportesGenerados.reporteTotalNombre %}
+{%for k,v in reportesGenerados.reporteTotalNombre.items %}
     {{k}} Exacto {{v}} <br/>
 {%endfor%}
 
@@ -89,7 +89,7 @@
 {%endfor%}
 <br/>
 <h3>Producción por temperatura</h3>
-{{reportesGenerados.reporteTotalTemporatura}}
+{{reportesGenerados.reporteTotalTemperatura}}
 
 <h2>Reporte detallado</h2>
 <p>A continuación les mostramos los productos que se tienen y el sitio donde debe accederlos</p>
