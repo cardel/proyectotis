@@ -69,8 +69,39 @@ class ReporteProductosView(TemplateView):
         reporte = []
         tenants = Productor.objects.exclude(schema_name='public')
         dominio = "proyectotis.com:8080"
+
+
+        #Reportes gráficos
+        productoPorAltura = {}
+        productoPorTemperatura = {}
+        productosTotales = {}
+
         for tenant in tenants:
             connection.set_tenant(tenant)
+
+
+            listaNombreFrutas = Fruta.objects.values_list('nombre')
+            listamsnmFrutas = Fruta.objects.values_list('msnm')
+            listaTemperaturaFrutas = Fruta.objects.values_list('temperatura')
+
+            for fruta in listaNombreFrutas:
+                if productosTotales.has_key(fruta):
+                    productosTotales[fruta]=1
+                else:
+                    productosTotales[fruta]=productosTotales[fruta]+1
+
+            for fruta in listamsnmFrutas:
+                if productoPorAltura.has_key(fruta):
+                    productoPorAltura[fruta]=1
+                else:
+                    productoPorAltura[fruta]=productoPorAltura[fruta]+1
+
+            for fruta in listaTemperaturaFrutas:
+                if productoPorTemperatura.has_key(fruta):
+                    productoPorTemperatura[fruta]=1
+                else:
+                    productoPorTemperatura[fruta]=productoPorTemperatura[fruta]+1
+
             reporte_actual = {
                 'url': tenant.schema_name+'.'+dominio,
                 'info': serializers.serialize("python", Fruta.objects.all())
@@ -79,10 +110,18 @@ class ReporteProductosView(TemplateView):
             reporte.append(reporte_actual)
 
 
+        reportesGenerados = {
+            'reporteTotalNombre': productosTotales,
+            'reporteTotalAltura': productoPorAltura,
+            'reporteTotalTemporatura': productoPorTemperatura,
+
+        }
+
         connection.set_schema_to_public()
 
         contexto = {
-            'reporte' : reporte
+            'reporte' : reporte,
+            'reportesGenerados' : reportesGenerados,
         }
 
         context.update(contexto)
