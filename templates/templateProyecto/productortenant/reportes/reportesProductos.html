@@ -32,17 +32,11 @@
         var options = {
           title: 'Número de frutas disponibles',
           legend: { position: 'none' },
-           hAxis: {
-            ticks: [
-               {%for k,v in reportesGenerados.reporteTotalNombre.items %}
-                 '{{k}}',
-                {%endfor%}
 
-            ]
              },
         };
 
-        var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
     </script>
