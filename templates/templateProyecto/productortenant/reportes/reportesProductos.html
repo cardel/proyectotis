@@ -51,7 +51,7 @@
 
         data.addRows([
           {%for k,v in reportesGenerados.reporteTotalAltura.items %}
-             ['{{k}}', {{v}}],
+             [{{k}}, {{v}}],
             {%endfor%}
 
         ]);
@@ -76,7 +76,7 @@
           ['Fruta', 'Cantidad'],
 
           {%for k,v in reportesGenerados.reporteTotalTemperatura.items %}
-             ['{{k}}', {{v}}],
+             [{{k}}, {{v}}],
             {%endfor%}
 
           ]);
