@@ -149,7 +149,7 @@ class ReporteFincaView(TemplateView):
         for tenant in tenants:
             connection.set_tenant(tenant)
 
-            listaNombreFinca = Fruta.objects.values_list('departamento')
+            listaNombreFinca = Finca.objects.values_list('departamento')
             for finca in listaNombreFinca:
 
                 f = str(finca[0]).capitalize()
