@@ -75,8 +75,8 @@
 <h2>Reportes gráficos</h2>
 
 <h3>Producción total por fruta</h3>
-{{reportesGenerados.reporteTotalNombre}}
-{%for k,v in reportesGenerados.reporteTotalNombre.iteritems() %}
+{{reportesGenerados.reporteTotalNombre.items}}
+{%for k,v in reportesGenerados.reporteTotalNombre %}
     {{k}} : {{v}} <br/>
 {%endfor%}
 
