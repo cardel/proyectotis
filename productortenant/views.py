@@ -169,9 +169,14 @@ class ReporteFincaView(TemplateView):
 
         connection.set_schema_to_public()
 
+        reportesGenerados = {
+            'fincasPorDepartamento': fincasPorDepartamento,
+
+        }
+
         contexto = {
             'reporte' : reporte,
-            'fincasPorDepartamento' : fincasPorDepartamento,
+            'fincasPorDepartamento' : reportesGenerados,
         }
 
         context.update(contexto)
