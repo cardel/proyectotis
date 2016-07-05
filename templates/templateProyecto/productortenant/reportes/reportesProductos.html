@@ -76,6 +76,9 @@
 
 <h3>Producción total por fruta</h3>
 {{reportesGenerados.reporteTotalNombre}}
+{%for k,v in reportesGenerados.reporteTotalNombre %}
+    {{k}} : {{v}} <br/>
+{%endfor%}
 
 <div id="chart_div" class="img-thumbnail" style="width: 900px; height: 500px;"></div>
 
