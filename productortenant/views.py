@@ -176,7 +176,7 @@ class ReporteFincaView(TemplateView):
 
         contexto = {
             'reporte' : reporte,
-            'fincasPorDepartamento' : reportesGenerados,
+            'reportesGenerados' : reportesGenerados,
         }
 
         context.update(contexto)
