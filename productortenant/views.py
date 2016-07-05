@@ -112,9 +112,9 @@ class ReporteProductosView(TemplateView):
 
 
         reportesGenerados = {
-            'reporteTotalNombre': productosTotales,
-            'reporteTotalAltura': productoPorAltura,
-            'reporteTotalTemporatura': productoPorTemperatura,
+            'reporteTotalNombre':  serializers.serialize("json", productosTotales),
+            'reporteTotalAltura':  serializers.serialize("json", productoPorAltura),
+            'reporteTotalTemporatura':  serializers.serialize("json", productoPorTemperatura),
 
         }
 
