@@ -85,22 +85,23 @@ class ReporteProductosView(TemplateView):
             listaTemperaturaFrutas = Fruta.objects.values_list('temperatura')
 
             for fruta in listaNombreFrutas:
-                if productosTotales.get(fruta) !=None :
-                    productosTotales[fruta]=1
-                else:
+                if fruta in productosTotales:
                     productosTotales[fruta]=productosTotales[fruta]+1
+                else:
+                    productosTotales[fruta]=1
+
 
             for fruta in listamsnmFrutas:
-                if productoPorAltura.get(fruta) !=None :
-                    productoPorAltura[fruta]=1
-                else:
+                if fruta in productoPorAltura:
                     productoPorAltura[fruta]=productoPorAltura[fruta]+1
+                else:
+                    productoPorAltura[fruta]=1
 
             for fruta in listaTemperaturaFrutas:
-                if productoPorTemperatura.get(fruta) !=None :
-                    productoPorTemperatura[fruta]=1
-                else:
+                if fruta in productoPorTemperatura:
                     productoPorTemperatura[fruta]=productoPorTemperatura[fruta]+1
+                else:
+                    productoPorTemperatura[fruta]=1
 
             reporte_actual = {
                 'url': tenant.schema_name+'.'+dominio,
