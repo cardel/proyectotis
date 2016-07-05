@@ -85,19 +85,19 @@ class ReporteProductosView(TemplateView):
             listaTemperaturaFrutas = Fruta.objects.values_list('temperatura')
 
             for fruta in listaNombreFrutas:
-                if productosTotales.has_key(fruta):
+                if fruta in productosTotales:
                     productosTotales[fruta]=1
                 else:
                     productosTotales[fruta]=productosTotales[fruta]+1
 
             for fruta in listamsnmFrutas:
-                if productoPorAltura.has_key(fruta):
+                if fruta in productoPorAltura:
                     productoPorAltura[fruta]=1
                 else:
                     productoPorAltura[fruta]=productoPorAltura[fruta]+1
 
             for fruta in listaTemperaturaFrutas:
-                if productoPorTemperatura.has_key(fruta):
+                if fruta in productoPorTemperatura:
                     productoPorTemperatura[fruta]=1
                 else:
                     productoPorTemperatura[fruta]=productoPorTemperatura[fruta]+1
