@@ -53,9 +53,10 @@
         var options = {
           title: 'Número frutas por altura (msnm)',
           legend: { position: 'none' },
+          series: [{'color': '#D9544C'}],
         };
 
-        var chart = new google.visualization.LineChart(document.getElementById('chart_divB'));
+        var chart = new google.visualization.ScatterChart(document.getElementById('chart_divB'));
         chart.draw(data, options);
       }
 
@@ -75,9 +76,10 @@
         var options = {
           title: 'Número de frutas por temperatura',
           legend: { position: 'none' },
+          series: [{'color': '#AF54DC'}],
         };
 
-        var chart = new google.visualization.LineChart(document.getElementById('chart_divC'));
+        var chart = new google.visualization.ScatterChart(document.getElementById('chart_divC'));
         chart.draw(data, options);
       }
     </script>
@@ -98,16 +100,16 @@
 <h3>Número total de productores por fruta</h3>
 
 
-<div id="chart_div" class="img-thumbnail" style="width: 900px; height: 500px;"></div>
+<div id="chart_div" class="img-thumbnail" style="width: 600px; height: 400px;"></div>
 
 <h3>Total de frutas por altura (msnm)</h3>
 
-<div id="chart_divB" class="img-thumbnail" style="width: 900px; height: 500px;"></div>
+<div id="chart_divB" class="img-thumbnail" style="width: 600px; height: 400px;"></div>
 
 <h3>Producción por temperatura</h3>
 
 
-<div id="chart_divC" class="img-thumbnail" style="width: 900px; height: 500px;"></div>
+<div id="chart_divC" class="img-thumbnail" style="width: 600px; height: 400px;"></div>
 
 
 <h2>Reporte detallado</h2>
