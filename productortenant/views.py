@@ -95,16 +95,20 @@ class ReporteProductosView(TemplateView):
 
 
             for fruta in listamsnmFrutas:
-                if fruta in productoPorAltura:
-                    productoPorAltura[fruta]=productoPorAltura[fruta]+1
+
+                f =fruta[0]
+                if f in productoPorAltura:
+                    productoPorAltura[f]=productoPorAltura[f]+1
                 else:
-                    productoPorAltura[fruta]=1
+                    productoPorAltura[f]=1
 
             for fruta in listaTemperaturaFrutas:
-                if fruta in productoPorTemperatura:
-                    productoPorTemperatura[fruta]=productoPorTemperatura[fruta]+1
+
+                f =fruta[0]
+                if f in productoPorTemperatura:
+                    productoPorTemperatura[f]=productoPorTemperatura[f]+1
                 else:
-                    productoPorTemperatura[fruta]=1
+                    productoPorTemperatura[f]=1
 
             reporte_actual = {
                 'url': tenant.schema_name+'.'+dominio,
