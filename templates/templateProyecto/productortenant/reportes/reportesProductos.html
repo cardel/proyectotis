@@ -18,6 +18,7 @@
  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
+      google.charts.load('current', {'packages':['line']});
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
@@ -44,14 +45,17 @@
 
        google.charts.setOnLoadCallback(drawChartB);
        function drawChartB() {
-        var data = google.visualization.arrayToDataTable([
-          ['Altura', 'Cantidad de frutas'],
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'Temperatura(C)');
+        data.addColumn('number', 'Cantidad de frutas(C)');
+
+        data.addRows([
           {%for k,v in reportesGenerados.reporteTotalAltura.items %}
              ['{{k}}', {{v}}],
             {%endfor%}
 
-          ]);
-
+        ]);
         var options = {
           title: 'Número frutas por altura (msnm)',
           legend: { position: 'none' },
@@ -82,8 +86,7 @@
           title: 'Número de frutas por temperatura',
           legend: { position: 'none' },
           series: [{'color': '#AF54DC'}],
-          hAxis: {title: 'Temperatura (C)'},
-          vAxis: {title: 'Número de frutas'},
+
 
         };
 
