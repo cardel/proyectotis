@@ -108,7 +108,7 @@ DATABASES = {
             'NAME': 'tendencias',
             'USER': 'tendencias',
             'PASSWORD': 'tendencias',
-            'HOST': '172.31.5.162',   #Servidor de base de datos Amazon
+            'HOST': 'localhost',   #Servidor de base de datos Amazon
 #            'HOST': 'ec2-52-36-225-236.us-west-2.compute.amazonaws.com',
             'PORT': '5432',
         }

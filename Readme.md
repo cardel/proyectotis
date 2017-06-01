@@ -9,5 +9,22 @@
 - <b>productortenant:</b> Es para registrar un tenant
 - <b>gestionfruta:</b> Todo lo relativo a gestionar fruta
 
+##Recomendaciones
+
+- <b>Base de datos</b>
+-- Postgres
+-- Usuario: tendencias
+-- Password: tendencias
+
+- <b>Dependencias</b>
+-- sudo apt-get install python3-pillow
+-- sudo apt-get install 
+-- sudo apt-get install postgresql
+-- sudo apt-get install postgresql-server-dev-all
+-- sudo pip3 install django-tenants
+-- sudo pip3 install django-bootstrap3
+
 ##Crear SuperUsuario
-manage.py createsuperuser - username = admin - email = admin@admin.com
+manage.py createsuperuser --username admin --email admin@admin.com
+
+##Poner a funcionar

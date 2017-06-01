@@ -17,7 +17,7 @@ from django.conf.urls import url
 from gestionfruta.views import Home, RegistrarFincaView, RegistrarFrutaView, EditarFincaView, EditarFrutaView, AdminContactoView, EditarContactoView, FincaView, FrutaView, ContactoView
 from django.conf import settings
 from django.conf.urls.static import static
-
+from django.contrib.auth.views import login, logout
 
 urlpatterns = [
 
@@ -40,9 +40,8 @@ urlpatterns = [
 
 
     #Autenticacion
-    url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'gestionfruta/login.html'},
-        name='mysite_login'),
-    url(r'^logout/$', 'django.contrib.auth.views.logout',  {'next_page': "/"}, name='mysite_logout'),
+    url(r'^login/$', login, {'template_name': 'gestionfruta/login.html'}, name='mysite_login'),
+    url(r'^logout/$', logout,  {'next_page': "/"}, name='mysite_logout'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -1,7 +1,7 @@
 from django import forms
 from django.forms.widgets  import FileInput, Textarea
 from .models import Contacto, Fruta, Finca
-from productortenant.models import Departamento, Municipio
+#from productortenant.models import Departamento, Municipio
 
 
 
@@ -14,26 +14,28 @@ class RegistrarFincaForm(forms.ModelForm):
 
 
 
-    departament_choices = Departamento.objects.values_list('nombre', "nombre").order_by("nombre")
+    #departament_choices = Departamento.objects.values_list('nombre', 'nombre').order_by('nombre')
+    #municipio_choices = Municipio.objects.values_list('nombre', 'nombre').order_by('nombre')
+    #nombre = forms.CharField(label="Nombre de la finca", max_length=120)
 
-    municipio_choices = Municipio.objects.values_list('nombre', "nombre").order_by("nombre")
+    #departamento = forms.ChoiceField(
+    #    label="Departamento",
+    #    choices=departament_choices,
+    #    required=True,
+    #     widget=forms.Select(),
+    #)
 
-    nombre = forms.CharField(label="Nombre de la finca", max_length=120)
-
-    departamento = forms.ChoiceField(
-        label="Departamento",
-        choices=departament_choices,
-        required=True,
-         widget=forms.Select(),
-    )
-
-
-    municipio =  forms.ChoiceField(
-        label="Municipio",
-        choices=municipio_choices,
-        required=True,
-         widget=forms.Select(),
-    )
+    CHOICES = (
+    ('EXMPL', 'Example'), ('EXMPL2', 'Example2'))
+    
+    departamento = forms.ChoiceField(choices=CHOICES, required=True, label='Departamento',widget=forms.Select(),)
+    municipio = forms.ChoiceField(choices=CHOICES, required=True, label='Municipio',widget=forms.Select(),)
+    #municipio =  forms.ChoiceField(
+    #    label="Municipio",
+    #    choices=municipio_choices,
+    #    required=True,
+    #     widget=forms.Select(),
+    #)
 
     imagen = forms.ImageField(label="Foto de la finca (500px por 500px preferiblemente)", widget=FileInput, required=True)
     descripcion = forms.CharField(label="Descripción", widget=Textarea, required=True)

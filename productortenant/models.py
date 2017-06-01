@@ -33,5 +33,6 @@ class Departamento(models.Model):
 
 #Municipio
 class Municipio(models.Model):
-    departamento = models.ForeignKey(Departamento, on_delete=models.CASCADE)
+    #departamento = models.ForeignKey(Departamento, on_delete=models.CASCADE)
+    departamento = models.CharField(max_length=100)
     nombre = models.CharField(max_length=100)
