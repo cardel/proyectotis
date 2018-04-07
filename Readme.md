@@ -26,6 +26,10 @@
 
 ##Crear SuperUsuario
 
-manage.py createsuperuser --username admin --email admin@admin.com
+python3 manage.py createsuperuser --username admin --email admin@admin.com
 
 ##Poner a funcionar
+
+python3 manage.py makemigrations
+python3 manage.py migrate_schemas
+python3 manage.py migrate
