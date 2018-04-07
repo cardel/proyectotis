@@ -11,20 +11,21 @@
 
 ##Recomendaciones
 
-- <b>Base de datos</b>
--- Postgres
--- Usuario: tendencias
--- Password: tendencias
+<b>Base de datos</b>
+* Postgres
+* Usuario: tendencias
+*  Password: tendencias
 
-- <b>Dependencias</b>
--- sudo apt-get install python3-pillow
--- sudo apt-get install 
--- sudo apt-get install postgresql
--- sudo apt-get install postgresql-server-dev-all
--- sudo pip3 install django-tenants
--- sudo pip3 install django-bootstrap3
+ <b>Dependencias</b>
+* sudo apt-get install python3-pillow
+* sudo apt-get install python-django
+* sudo apt-get install postgresql
+* sudo apt-get install postgresql-server-dev-all
+* sudo pip3 install django-tenants
+* sudo pip3 install django-bootstrap3
 
 ##Crear SuperUsuario
+
 manage.py createsuperuser --username admin --email admin@admin.com
 
 ##Poner a funcionar
