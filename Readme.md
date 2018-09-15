@@ -30,11 +30,11 @@ python3 manage.py createsuperuser --username admin --email admin@admin.com
 
 ##Poner a funcionar
 
-python3 manage.py makemigrations gestionfruta
-python3 manage.py makemigrations productotenant
-python3 manage.py migrate_schemas
-python3 manage.py migrate
-python3 manage.py runserver localhost:8080
+* python3 manage.py makemigrations gestionfruta
+* python3 manage.py makemigrations productotenant
+* python3 manage.py migrate_schemas
+* python3 manage.py migrate
+* python3 manage.py runserver localhost:8080
 
 ##Visualizar
 
