@@ -22,6 +22,7 @@
 * sudo apt-get install postgresql-server-dev-all
 * sudo pip3 install django-tenants --upgrade
 * sudo pip3 install django-bootstrap3 --upgrade
+* sudo pip3 install psycopg --upgrade
 
 ##Crear SuperUsuario
 
