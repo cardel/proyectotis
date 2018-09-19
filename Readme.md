@@ -41,7 +41,7 @@
 
 #Crear SuperUsuario
 
-python3 manage.py createsuperuser --username admin --email admin@admin.com
+python manage.py createsuperuser --username admin --email admin@admin.com
 
 ##Poner a funcionar
 
@@ -50,7 +50,6 @@ python3 manage.py createsuperuser --username admin --email admin@admin.com
 * python manage.py migrate_schemas
 * python manage.py migrate
 * python manage.py runserver localhost:8080
-
 ##Visualizar
   
 En un navegador ingrese la dirección:
