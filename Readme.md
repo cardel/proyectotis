@@ -11,9 +11,9 @@
 ##Recomendaciones
 
 <b>Base de datos</b>
-* Postgres
+* Postgres 9.4 o 9.6
 * Usuario: tendencias
-*  Password: tendencias
+* Password: tendencias
 
  <b>Dependencias</b>
 
@@ -21,13 +21,6 @@
 
 * Python 3.5 o 3.6
 * Servidor apache
-* Base de datos postgresSQL 9.4 o 9.6
-
-##Bases de datos
-
-* Usuario: multitenant
-* Contraseña: multitenant
-* Base de datos: multitenant
 
 ###Del entorno
 
