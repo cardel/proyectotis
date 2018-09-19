@@ -39,7 +39,7 @@ SHARED_APPS = (
     #APP QUE CONTIENE EL MANEJO DE TENANTS
 
     'productortenant',
-
+    'gestionfruta',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -63,20 +63,28 @@ INSTALLED_APPS = list(set(SHARED_APPS + TENANT_APPS))
 
 
 
-MIDDLEWARE_CLASSES = [
-    #Agregar esta clase para el uso de tenants
-    'django_tenants.middleware.TenantMiddleware',
+#MIDDLEWARE_CLASSES = [
+    ##Agregar esta clase para el uso de tenants
+    #'django_tenants.middleware.TenantMiddleware',
 
-    'django.middleware.common.CommonMiddleware',
+    #'django.middleware.common.CommonMiddleware',
+    #'django.contrib.sessions.middleware.SessionMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.contrib.auth.middleware.AuthenticationMiddleware',
+    #'django.contrib.messages.middleware.MessageMiddleware',
+    #'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+#]
+
+MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
 ]
-
-
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',

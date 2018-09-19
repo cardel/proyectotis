@@ -16,27 +16,44 @@
 *  Password: tendencias
 
  <b>Dependencias</b>
-* sudo apt-get install python3-pillow
-* sudo apt-get install python-django
-* sudo apt-get install postgresql
-* sudo apt-get install postgresql-server-dev-all
-* sudo pip3 install django-tenants --upgrade
-* sudo pip3 install django-bootstrap3 --upgrade
 
-##Crear SuperUsuario
+##Del sistema
+
+* Python 3.5 o 3.6
+* Servidor apache
+* Base de datos postgresSQL 9.4 o 9.6
+
+##Bases de datos
+
+* Usuario: multitenant
+* Contraseña: multitenant
+* Base de datos: multitenant
+
+###Del entorno
+
+* virtualenv proyecto -p python3
+* source proyecto/bin/activate
+* pip install Django==2.0.4
+* pip install django-bootstrap3==9.1.0
+* pip install django-tenants==2.0.0
+* pip install psycopg2==2.7.4
+* pip install Pillow==4.0.0
+
+#Crear SuperUsuario
 
 python3 manage.py createsuperuser --username admin --email admin@admin.com
 
 ##Poner a funcionar
 
-python3 manage.py makemigrations gestionfruta
-python3 manage.py makemigrations productotenant
-python3 manage.py migrate_schemas
-python3 manage.py migrate
-python3 manage.py runserver localhost:8080
+* python manage.py makemigrations gestionfruta
+* python manage.py makemigrations productotenant
+* python manage.py migrate_schemas
+* python manage.py migrate
+* python manage.py runserver localhost:8080
 
 ##Visualizar
-
+  
 En un navegador ingrese la dirección:
 
 http://localhost:8080
+ 
