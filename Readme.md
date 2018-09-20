@@ -79,9 +79,10 @@ http://localhost:8080
 
 ##Notas.
 
-Si lo va subir a servidor Web, debe realizar cambios.
+Si lo va subir a servidor Web y tiene DNS sutitio.com, debe realizar cambios.
 
 * En la base de datos en productortenant_domain debe cambiar las urls de localhost a susitio.com
+* Dentro de productotenant en views.py debe cambiar todo lo que dice localhost a susitio.com
 * Puede ejecutar o bien integrarlo a Apache (es lo recomendado)
 * Para integrar a apache: https://django-tenants.readthedocs.io/en/latest/install.html#configuring-your-apache-server-optional
 
