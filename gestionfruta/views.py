@@ -59,11 +59,11 @@ class RegistrarFincaView(CreateView):
         finca = serializers.serialize("python", Finca.objects.all()[:1])
 
         #Parsear los datos
-
+		
         contexto = {
             'finca' : parse_data(finca, Finca),
         }
-
+		
         context.update(contexto)
         return context
 
@@ -140,10 +140,9 @@ class FincaView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(FincaView, self).get_context_data(**kwargs)
-
         #Transformar a JSON
         finca = serializers.serialize("python", Finca.objects.all()[:1])
-
+        
         #Parsear los datos
 
         contexto = {
@@ -158,6 +157,7 @@ class FrutaView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(FrutaView, self).get_context_data(**kwargs)
+
         #Transformar a JSON
         fruta = serializers.serialize("python", Fruta.objects.all())
         #Parsear los datos

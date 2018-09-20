@@ -39,7 +39,6 @@ SHARED_APPS = (
     #APP QUE CONTIENE EL MANEJO DE TENANTS
 
     'productortenant',
-    'gestionfruta',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -50,9 +49,6 @@ SHARED_APPS = (
 )
 #aplicaciones privadas
 TENANT_APPS = (
-    'django.contrib.contenttypes',
-    'django.contrib.auth',
-    'django.contrib.messages',
     'gestionfruta',
 )
 #Modelos del tenant, son la creación del productor
@@ -63,28 +59,28 @@ INSTALLED_APPS = list(set(SHARED_APPS + TENANT_APPS))
 
 
 
-#MIDDLEWARE_CLASSES = [
-    ##Agregar esta clase para el uso de tenants
-    #'django_tenants.middleware.TenantMiddleware',
+MIDDLEWARE_CLASSES = [
+    #Agregar esta clase para el uso de tenants
+    'django_tenants.middleware.main.TenantMainMiddleware',
 
-    #'django.middleware.common.CommonMiddleware',
-    #'django.contrib.sessions.middleware.SessionMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
-    #'django.contrib.auth.middleware.AuthenticationMiddleware',
-    #'django.contrib.messages.middleware.MessageMiddleware',
-    #'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-#]
-
-MIDDLEWARE = [
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.security.SecurityMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
+
+#MIDDLEWARE = [
+    #'django.contrib.sessions.middleware.SessionMiddleware',
+    #'django.middleware.security.SecurityMiddleware',
+    #'django.middleware.common.CommonMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.contrib.auth.middleware.AuthenticationMiddleware',
+    #'django.contrib.messages.middleware.MessageMiddleware',
+    #'django.middleware.clickjacking.XFrameOptionsMiddleware',
+#]
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -129,7 +125,11 @@ DATABASE_ROUTERS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
-
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.contrib.messages.context_processors.messages',
 )
 TEMPLATES = [
     {

@@ -36,13 +36,43 @@
 
 python manage.py createsuperuser --username admin --email admin@admin.com
 
-##Poner a funcionar
+##Configurar
 
 * python manage.py makemigrations gestionfruta
-* python manage.py makemigrations productotenant
+* python manage.py makemigrations productortenant
+* python manage.py migrate_schemas --shared
 * python manage.py migrate_schemas
 * python manage.py migrate
+
+##Poner en funcionamiento
+
+* Ejecutar python manage.py.shell y escribir
+
+...
+from productortenant.models import Domain,Productor
+
+nuevoproducto = Productor(tipo_documento = 1,identificacion = 1234,nombre = 'Public',fecha_nacimiento =  '2000-01-01',telefono = 000000,correo = 'admin@proyectotis.com',fecha_creacion = '2000-01-01', schema_name='public')
+
+nuevoproducto.save()
+query=Productor.objects.get(schema_name="public")
+
+
+dominio_tenant = Domain(domain='localhost',is_primary=True, tenant_id=query.id)
+dominio_tenant.save()
+...
+
+* Crear superusuario
+
+...
+python manage.py createsuperuser
+...
+
+Este usuario tendrá acceso a todo. Luego ejecutar
+
 * python manage.py runserver localhost:8080
+
+
+
 ##Visualizar
   
 En un navegador ingrese la dirección:
