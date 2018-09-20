@@ -26,11 +26,9 @@
 
 * virtualenv proyecto -p python3
 * source proyecto/bin/activate
-* pip install Django==2.0.4
-* pip install django-bootstrap3==9.1.0
-* pip install django-tenants==2.0.0
-* pip install psycopg2==2.7.4
-* pip install Pillow==4.0.0
+* pip install -r requerimientos.txt
+
+El archivo requerimientos.txt está en el raiz del proyecto
 
 #Crear SuperUsuario
 
@@ -38,17 +36,16 @@ python manage.py createsuperuser --username admin --email admin@admin.com
 
 ##Configurar
 
-* python manage.py makemigrations gestionfruta
-* python manage.py makemigrations productortenant
+* python manage.py makemigrations
 * python manage.py migrate_schemas --shared
-* python manage.py migrate_schemas
-* python manage.py migrate
 
 ##Poner en funcionamiento
 
-* Ejecutar python manage.py.shell y escribir
+* python manage.py shell
 
-...
+Escribir linea por linea:
+
+. . .
 from productortenant.models import Domain,Productor
 
 nuevoproducto = Productor(tipo_documento = 1,identificacion = 1234,nombre = 'Public',fecha_nacimiento =  '2000-01-01',telefono = 000000,correo = 'admin@proyectotis.com',fecha_creacion = '2000-01-01', schema_name='public')
@@ -59,7 +56,9 @@ query=Productor.objects.get(schema_name="public")
 
 dominio_tenant = Domain(domain='localhost',is_primary=True, tenant_id=query.id)
 dominio_tenant.save()
-...
+
+exit()
+. . .
 
 * Crear superusuario
 

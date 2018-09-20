@@ -26,7 +26,7 @@ SECRET_KEY = 'qe2i-@deobewo9hi%v5af#*re$1s@2ze=t-98-_q3r)#x9pf=m'
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost",".localhost"]
 
 
 # Application definition
@@ -37,10 +37,9 @@ SHARED_APPS = (
     #APP DE LA HERRAMIENTA DJANGO-TENANTS
     'django_tenants',
     #APP QUE CONTIENE EL MANEJO DE TENANTS
-
     'productortenant',
-    'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django.contrib.auth',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
@@ -49,20 +48,20 @@ SHARED_APPS = (
 )
 #aplicaciones privadas
 TENANT_APPS = (
+	'django.contrib.contenttypes',
+    'django.contrib.auth',
+    'django.contrib.admin',
+    'django.contrib.sessions',
+    'django.contrib.messages',
     'gestionfruta',
 )
-#Modelos del tenant, son la creación del productor
-TENANT_MODEL = "productortenant.Productor"  # app.Model
-TENANT_DOMAIN_MODEL = "productortenant.Domain"
-
-INSTALLED_APPS = list(set(SHARED_APPS + TENANT_APPS))
+INSTALLED_APPS = list(set(TENANT_APPS + SHARED_APPS))
 
 
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     #Agregar esta clase para el uso de tenants
-    'django_tenants.middleware.main.TenantMainMiddleware',
-
+    'proyectotis.middleware.ProyectotisMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -72,15 +71,14 @@ MIDDLEWARE_CLASSES = [
 
 ]
 
-#MIDDLEWARE = [
-    #'django.contrib.sessions.middleware.SessionMiddleware',
-    #'django.middleware.security.SecurityMiddleware',
-    #'django.middleware.common.CommonMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
-    #'django.contrib.auth.middleware.AuthenticationMiddleware',
-    #'django.contrib.messages.middleware.MessageMiddleware',
-    #'django.middleware.clickjacking.XFrameOptionsMiddleware',
-#]
+#Modelos del tenant, son la creación del productor
+TENANT_MODEL = "productortenant.Productor"  # app.Model
+TENANT_DOMAIN_MODEL = "productortenant.Domain"
+
+ROOT_URLCONF = 'proyectotis.private_urls'
+PUBLIC_SCHEMA_URLCONF = 'proyectotis.public_urls'
+PUBLIC_SCHEMA_NAME = 'public'
+
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -123,14 +121,14 @@ DATABASE_ROUTERS = (
     'django_tenants.routers.TenantSyncRouter',
 )
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.core.context_processors.request',
-    'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.debug',
-    'django.core.context_processors.media',
-    'django.core.context_processors.static',
-    'django.contrib.messages.context_processors.messages',
-)
+#TEMPLATE_CONTEXT_PROCESSORS = (
+    #'django.core.context_processors.request',
+    #'django.contrib.auth.context_processors.auth',
+    #'django.core.context_processors.debug',
+    #'django.core.context_processors.media',
+    #'django.core.context_processors.static',
+    #'django.contrib.messages.context_processors.messages',
+#)
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -138,6 +136,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                #~ 'django.core.context_processors.request',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -148,9 +147,7 @@ TEMPLATES = [
 ]
 
 
-ROOT_URLCONF = 'proyectotis.private_urls'
-PUBLIC_SCHEMA_URLCONF = 'proyectotis.public_urls'
-PUBLIC_SCHEMA_NAME = 'public'
+
 
 LOGIN_URL = 'mysite_login'
 LOGOUT_URL = 'mysite_logout'

@@ -24,7 +24,7 @@ class Productor(TenantMixin):
         return self.schema_name
 
 class Domain(DomainMixin):
-    pass
+	pass
 
 #Departamento
 

@@ -1,0 +1,8 @@
+Django==2.0.8
+django-bootstrap3==9.1.0
+django-tenants==2.0.0
+olefile==0.46
+Pillow==4.0.0
+pkg-resources==0.0.0
+psycopg2==2.7.4
+pytz==2018.5
