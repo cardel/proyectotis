@@ -1,14 +1,14 @@
-#Proyecto del curso tendencias Febrero - Junio 2016
+# Proyecto del curso tendencias Febrero - Junio 2016
 
-##Ramas
+## Ramas
 * Master. Funciona en local 
 
-##Aplicaciones
+## Aplicaciones
 
 * <b>productortenant:</b> Es para registrar un tenant
 * <b>gestionfruta:</b> Todo lo relativo a gestionar fruta
 
-##Recomendaciones
+## Recomendaciones
 
 <b>Base de datos</b>
 * Postgres 9.4 o 9.6
@@ -17,12 +17,12 @@
 
  <b>Dependencias</b>
 
-##Del sistema
+## Del sistema
 
 * Python 3.5 o 3.6
 * Servidor apache
 
-###Del entorno
+### Del entorno
 
 * virtualenv proyecto -p python3
 * source proyecto/bin/activate
@@ -31,15 +31,14 @@
 El archivo requerimientos.txt está en el raiz del proyecto
 
 
-
-##Configurar
+## Configurar
 
 * python manage.py makemigrations
 * python manage.py migrate_schemas --shared
 
 <b>Importante</b> No ejecute más migraciones, ya que solo deseamos que el esquema publico tenga solo lo especificado en SHARED_APPS
 
-##Poner en funcionamiento
+## Poner en funcionamiento
 
 * python manage.py shell
 
@@ -60,7 +59,7 @@ dominio_tenant.save()
 exit()
 ```
 
-#Crear SuperUsuario
+# Crear SuperUsuario
 ```
 python manage.py createsuperuser --username admin --email admin@admin.com
 ```
@@ -71,13 +70,13 @@ Este usuario tendrá acceso a todo. Luego ejecutar
 
 
 
-##Visualizar
+## Visualizar
   
 En un navegador ingrese la dirección:
 
 http://localhost:8080
 
-##Notas.
+## Notas.
 
 Si lo va subir a servidor Web y tiene DNS sutitio.com, debe realizar cambios.
 
