@@ -30,9 +30,7 @@
 
 El archivo requerimientos.txt está en el raiz del proyecto
 
-#Crear SuperUsuario
 
-python manage.py createsuperuser --username admin --email admin@admin.com
 
 ##Configurar
 
@@ -60,11 +58,10 @@ dominio_tenant.save()
 exit()
 ```
 
-* Crear superusuario
-
-...
-python manage.py createsuperuser
-...
+#Crear SuperUsuario
+```
+python manage.py createsuperuser --username admin --email admin@admin.com
+```
 
 Este usuario tendrá acceso a todo. Luego ejecutar
 
