@@ -37,6 +37,8 @@ El archivo requerimientos.txt está en el raiz del proyecto
 * python manage.py makemigrations
 * python manage.py migrate_schemas --shared
 
+<b>Importante</b> No ejecute más migraciones, ya que solo deseamos que el esquema publico tenga solo lo especificado en SHARED_APPS
+
 ##Poner en funcionamiento
 
 * python manage.py shell
@@ -82,4 +84,5 @@ Si lo va subir a servidor Web, debe realizar cambios.
 * En la base de datos en productortenant_domain debe cambiar las urls de localhost a susitio.com
 * Puede ejecutar o bien integrarlo a Apache (es lo recomendado)
 * Para integrar a apache: https://django-tenants.readthedocs.io/en/latest/install.html#configuring-your-apache-server-optional
+
  
