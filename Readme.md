@@ -45,7 +45,7 @@ python manage.py createsuperuser --username admin --email admin@admin.com
 
 Escribir linea por linea:
 
-. . .
+```
 from productortenant.models import Domain,Productor
 
 nuevoproducto = Productor(tipo_documento = 1,identificacion = 1234,nombre = 'Public',fecha_nacimiento =  '2000-01-01',telefono = 000000,correo = 'admin@proyectotis.com',fecha_creacion = '2000-01-01', schema_name='public')
@@ -58,7 +58,7 @@ dominio_tenant = Domain(domain='localhost',is_primary=True, tenant_id=query.id)
 dominio_tenant.save()
 
 exit()
-. . .
+```
 
 * Crear superusuario
 
