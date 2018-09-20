@@ -81,5 +81,5 @@ Si lo va subir a servidor Web, debe realizar cambios.
 
 * En la base de datos en productortenant_domain debe cambiar las urls de localhost a susitio.com
 * Puede ejecutar o bien integrarlo a Apache (es lo recomendado)
-* Para integrar a apache: (https://django-tenants.readthedocs.io/en/latest/install.html#configuring-your-apache-server-optional)
+* Para integrar a apache: https://django-tenants.readthedocs.io/en/latest/install.html#configuring-your-apache-server-optional
  
