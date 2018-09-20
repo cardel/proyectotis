@@ -1,5 +1,7 @@
 # Proyecto del curso tendencias Febrero - Junio 2016
 
+Actualizado 20 Sep 2018
+
 ## Ramas
 * Master. Funciona en local 
 
