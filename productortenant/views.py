@@ -28,7 +28,7 @@ class CrearProductor(CreateView):
     success_url = "/sucess"
 
     def form_valid(self, form):
-        dominio = "localhost"
+        dominio = "localhost:8080"
         tenant_registrado = form.instance
         self.object = form.save()
         dominio_tenant = Domain(domain=self.object.schema_name+'.'+dominio,
@@ -139,7 +139,7 @@ class ReporteFincaView(TemplateView):
     template_name = 'productortenant/reportes/reportesFinca.html'
 
     def get_context_data(self, **kwargs):
-        dominio = "localhost"
+        dominio = "localhost:8080"
         context = super(ReporteFincaView, self).get_context_data(**kwargs)
         reporte = []
         tenants = Productor.objects.exclude(schema_name='public')
